@@ -8,7 +8,24 @@ import { MdDownloadForOffline } from "react-icons/md";
 import Button from "@/components/UI/Button";
 import { motion } from "framer-motion";
 
-const projects = ["project1", "project2", "project3", "project4"];
+const projects = [
+	{
+		name: "Project1",
+		link: "https://cdn.sanity.io/images/z35qbzq4/production/c0dee05b9f0b2171b011383a8d05efd070e17204-640x360.webp",
+	},
+	{
+		name: "Project2",
+		link: "https://cdn.sanity.io/images/z35qbzq4/production/4ae5706bac4319db571c2f9e27d9fcfba038c22f-640x360.webp",
+	},
+	{
+		name: "Project3",
+		link: "https://cdn.sanity.io/images/z35qbzq4/production/704a3e68893df2ff9322ead35423884bceb73e88-640x360.webp",
+	},
+	{
+		name: "Project4",
+		link: "https://cdn.sanity.io/images/z35qbzq4/production/09a6cce7bcd03ed17ecf1722048f75174c8a232a-640x360.webp",
+	},
+];
 export default function Home() {
 	return (
 		<>
@@ -71,11 +88,11 @@ export default function Home() {
 						<div className="grid grid-cols-2 gap-4">
 							{projects.map((project) => (
 								<Image
-									key={project}
-									src={`/${project}.webp`}
+									key={project.name}
+									src={`${project.link}`}
 									width={640}
 									height={360}
-									alt={`${project}`}
+									alt={`${project.name}`}
 									className="rounded-xl w-full h-full object-cover"
 								/>
 							))}
