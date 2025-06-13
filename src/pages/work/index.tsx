@@ -72,12 +72,15 @@ function Work({ slides }: WorkProps) {
 							freeMode
 							autoplay={{ pauseOnMouseEnter: true, delay: 2500 }}
 							speed={500}
+							observer={true}
+							observeParents={true}
+							updateOnWindowResize={true}
 							pagination={{
 								clickable: true,
 								el: ".pagination",
 							}}
 							modules={[Pagination, Autoplay]}>
-							{slides.map((slide, index) => (
+							{slides?.map((slide, index) => (
 								<SwiperSlide key={index} className="m-auto">
 									<motion.div
 										className="grid max-[456px]:grid-cols-[repeat(auto-fit,minmax(123px,1fr))] grid-cols-[repeat(auto-fit,minmax(185px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(270px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(260px,1fr))] min-[1024px]:max-[1111px]:!grid-cols-[repeat(auto-fit,minmax(216px,1fr))] gap-4 cursor-pointer"
@@ -93,7 +96,7 @@ function Work({ slides }: WorkProps) {
 										}}
 										initial="hidden"
 										animate="show">
-										{slide.images.map((image, index) => {
+										{slide.images?.map((image, index) => {
 											const imageUrl = urlFor(image.image);
 											return (
 												<motion.div
