@@ -5,12 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { BsArrowRight } from "react-icons/bs";
 import Curve from "../../components/Curve";
+import dynamic from "next/dynamic";
+
+const ParticalesContainer = dynamic(
+	() => import("@/components/ParticalesContainer"),
+	{
+		ssr: false,
+	}
+);
+
 import { client } from "../../sanity/lib/client";
 import { urlFor } from "../../sanity/lib/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-import ParticalesContainer from "@/components/ParticalesContainer";
 
 interface Slide {
 	images: {

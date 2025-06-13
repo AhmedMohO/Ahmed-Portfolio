@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+
 function ParticalesContainer() {
 	//@ts-expect-error raa
 	const particaleInit = useCallback(async (engine) => {

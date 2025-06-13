@@ -3,10 +3,17 @@ import Curve from "@/components/Curve";
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowRight } from "react-icons/hi";
-import ParticalesContainer from "@/components/ParticalesContainer";
 import { MdDownloadForOffline } from "react-icons/md";
 import Button from "@/components/UI/Button";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const ParticalesContainer = dynamic(
+	() => import("@/components/ParticalesContainer"),
+	{
+		ssr: false,
+	}
+);
 
 const projects = [
 	{
@@ -49,8 +56,8 @@ export default function Home() {
 							Hey, I am a front-end developer with a background in business and
 							finance, passionate about building clean, responsive web apps
 							using React and TypeScript. <br /> I enjoy turning ideas into
-							functional, user-focused experiences, and I’m always learning to
-							grow my skills and make an impact through code.
+							functional, user-focused experiences, and I&apos;m always learning
+							to grow my skills and make an impact through code.
 						</p>
 						<div className="mx-auto lg:ms-0">
 							<div className="flex items-center gap-5">

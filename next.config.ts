@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Enable modern JavaScript features
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Optimize bundle size
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'react-icons'],
+  },
 };
 
 export default nextConfig;
