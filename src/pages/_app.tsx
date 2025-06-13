@@ -20,12 +20,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 			<div className={`${sora.className} pt-30`}>
 				<Header />
 				<NavBar />
-				<AnimatePresence
-					mode="wait"
-					onExitComplete={() => {
-						window.scrollTo(0, 0);
-					}}
-					initial={false}>
+				<AnimatePresence mode="wait">
 					<Component key={router.route} {...pageProps} />
 				</AnimatePresence>
 			</div>
