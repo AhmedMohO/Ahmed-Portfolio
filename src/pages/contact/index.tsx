@@ -152,7 +152,6 @@ const Contact: NextPage = () => {
 								)}
 							</div>
 
-							{/* Message Input */}
 							<div>
 								<label
 									htmlFor="message"
@@ -175,7 +174,6 @@ const Contact: NextPage = () => {
 								)}
 							</div>
 
-							{/* Submit Button */}
 							<Button
 								classNameProps="justify-center cursor-pointer"
 								type="submit"

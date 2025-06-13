@@ -100,7 +100,7 @@ const SVG = ({ height, width }: SVGProps) => {
 
 	return (
 		<motion.svg
-			className="fixed h-[calc(100vh+600px)] z-20 w-screen pointer-events-none left-0 top-0"
+			className="fixed h-[150%] z-20 w-screen pointer-events-none left-0 top-0"
 			{...anim(translate)}>
 			<motion.path {...anim(curve(initialPath, targetPath))} />
 		</motion.svg>
