@@ -9,6 +9,7 @@ import { client } from "../../sanity/lib/client";
 import { urlFor } from "../../sanity/lib/image";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/free-mode";
 
 interface Slide {
 	images: {
@@ -62,9 +63,9 @@ function Work({ slides }: WorkProps) {
 						initial={{ x: 20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.76, duration: 0.6 }}
-						className="relative w-full max-h-[510px] overflow-hidden lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3">
+						className="relative w-full lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3">
 						<Swiper
-							className="w-full"
+							className="w-full max-h-[500px] overflow-hidden"
 							spaceBetween={10}
 							freeMode
 							autoplay={{ pauseOnMouseEnter: true, delay: 2500 }}
