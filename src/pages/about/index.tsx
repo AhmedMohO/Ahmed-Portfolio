@@ -13,7 +13,7 @@ export default function About() {
 				<meta name="description" content="About Me" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col gap-4 items-center">
+				<main className="h-full flex max-lg:flex-col gap-4 items-center">
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}

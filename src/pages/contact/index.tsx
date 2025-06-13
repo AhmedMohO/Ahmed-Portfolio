@@ -64,7 +64,7 @@ const Contact: NextPage = () => {
 				<meta name="description" content="Contact Me" />
 			</Head>
 			<Curve>
-				<main className="h-[calc(100vh-120px)]">
+				<main className="h-full">
 					<motion.div
 						initial={{ y: -20, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}

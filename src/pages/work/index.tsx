@@ -39,7 +39,7 @@ function Work({ slides }: WorkProps) {
 				<meta name="description" content="My Work" />
 			</Head>
 			<Curve>
-				<main className="h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4">
+				<main className="h-full flex max-lg:flex-col items-center gap-4">
 					<ParticalesContainer />
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}

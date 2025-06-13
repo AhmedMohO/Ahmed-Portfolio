@@ -55,7 +55,7 @@ export default function Curve({ children }: CurveProps) {
 	}, []);
 
 	return (
-		<section className="relative wrapper">
+		<section className="relative h-[80vh] wrapper">
 			<div
 				className={`fixed inset-0 z-20 pointer-events-none transition-opacity duration-0 delay-100 ${
 					dimensions.width == null ? "opacity-100" : "opacity-0"
