@@ -1,0 +1,64 @@
+@theme {
+	--background-color: #131424;
+	--main-color: #e27500;
+	--secondary-color: #c64b22;
+	/* --main-color: hsl(15.08deg 70.77% 45.41%); */
+	/* --secondary-color: hsl(41.95deg 69.7% 44.9%); */
+}
+
+@layer base {
+	* {
+		box-sizing: border-box;
+		outline: none;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		@apply bg-[var(--background-color)] bg-[url('/site-bg.svg')] !overflow-x-hidden m-0 md:p-0 relative text-white caret-[var(--main-color)];
+	}
+	img {
+		max-width: 100%;
+	}
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+}
+
+@import "tailwindcss";
+
+@layer utilities {
+	.wrapper {
+		@apply w-full 2xl:w-[1420px] md:px-20 px-4 mx-auto;
+	}
+	.active {
+		@apply before:h-full before:bg-[var(--secondary-color)] font-bold;
+	}
+	.active-m {
+		@apply text-[var(--secondary-color)] font-bold underline;
+	}
+	.slow-spin {
+		animation: slow-spin 8s linear infinite;
+	}
+	.pagination .swiper-pagination-bullet {
+		@apply w-3 h-3 !bg-[var(--secondary-color)] rounded-full;
+	}
+
+	.pagination .swiper-pagination-bullet-active {
+		@apply !bg-[var(--main-color)];
+	}
+}
+
+@keyframes slow-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
