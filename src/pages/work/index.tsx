@@ -10,6 +10,7 @@ import { urlFor } from "../../sanity/lib/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
+import ParticalesContainer from "@/components/ParticalesContainer";
 
 interface Slide {
 	images: {
@@ -39,6 +40,7 @@ function Work({ slides }: WorkProps) {
 			</Head>
 			<Curve>
 				<main className="h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4">
+					<ParticalesContainer />
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
