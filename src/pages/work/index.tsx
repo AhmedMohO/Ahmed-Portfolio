@@ -9,8 +9,6 @@ import { client } from "../../sanity/lib/client";
 import { urlFor } from "../../sanity/lib/image";
 import "swiper/css";
 import "swiper/css/pagination";
-import { useEffect, useRef } from "react";
-import type { Swiper as SwiperType } from "swiper";
 
 interface Slide {
 	images: {
@@ -32,16 +30,6 @@ interface WorkProps {
 }
 
 function Work({ slides }: WorkProps) {
-	const swiperRef = useRef<SwiperType | null>(null);
-
-	useEffect(() => {
-		return () => {
-			if (swiperRef.current) {
-				swiperRef.current.destroy(true, true);
-			}
-		};
-	}, []);
-
 	return (
 		<>
 			<Head>
@@ -74,11 +62,8 @@ function Work({ slides }: WorkProps) {
 						initial={{ x: 20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.76, duration: 0.6 }}
-						className="relative w-full lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3">
+						className="relative w-full max-h-[510px] overflow-hidden lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3">
 						<Swiper
-							onSwiper={(swiper) => {
-								swiperRef.current = swiper;
-							}}
 							className="w-full"
 							spaceBetween={10}
 							freeMode
