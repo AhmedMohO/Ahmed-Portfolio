@@ -92,7 +92,7 @@ export default function Home() {
 						transition={{ delay: 0.76, duration: 0.6 }}
 						className="bg-red-200/10 rounded-2xl w-full md:min-w-lg p-4 hidden md:block">
 						<h1 className="text-center text-[var(--main-color)] mb-2 text-3xl font-bold">
-							Bold & Confident
+							Professional + Friendly
 						</h1>
 						<div className="grid grid-cols-2 gap-4">
 							{projects.map((project) => (
