@@ -35,7 +35,7 @@ export default function About() {
 							a
 							target="_blank"
 							classNamePropsTwo="!w-fit max-lg:mx-auto"
-							link="https://drive.google.com/file/d/1dn6MOUg256iSsLxBPzjxL_sTXwlkNulO/view">
+							link="https://drive.google.com/file/d/1ZAZqy3NFHBXhEcP896ZqfzxdZybyEKcb/view?usp=sharing">
 							<MdDownloadForOffline className="text-2xl mr-2" />
 							Download CV
 						</Button>
