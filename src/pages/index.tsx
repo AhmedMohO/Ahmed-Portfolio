@@ -62,13 +62,13 @@ export default function Home() {
 							<div className="flex items-center gap-5">
 								<Link
 									href="/work"
-									className="relative w-[145px] h-[145px] p-2 flex justify-center items-center bg-cover bg-center bg-no-repeat group border border-gray-300 rounded-full	">
+									className="relative w-[145px] h-[145px] p-2 flex justify-center items-center bg-cover bg-center bg-no-repeat group border border-gray-300 rounded-full">
 									<Image
 										src={"/rounded-text.png"}
 										width={141}
 										height={148}
 										alt="My projects"
-										className="slow-spin w-full h-full max-w-[141px] max-h-[148px]"
+										className="slow-spin w-full h-full aspect-video"
 									/>
 									<HiArrowRight className="absolute text-4xl group-hover:translate-x-2 transition-all duration-300" />
 								</Link>
