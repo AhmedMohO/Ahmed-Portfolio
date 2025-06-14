@@ -63,9 +63,9 @@ function Work({ slides }: WorkProps) {
 						</h1>{" "}
 						<p className="max-lg:text-center text-gray-300">
 							I&apos;m a front-end developer with 3 years of experience who
-							loves turning ideas into sleek, I bring strategy and creativity to
-							every project. I&apos;m all about crafting digital experiences
-							that stand out and deliver real value.
+							loves turning ideas into sleek web apps, I bring strategy and
+							creativity to every project. I&apos;m all about crafting digital
+							experiences that stand out and deliver real value.
 						</p>
 					</motion.div>
 					<motion.div
