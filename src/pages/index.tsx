@@ -65,10 +65,10 @@ export default function Home() {
 									className="relative w-[145px] h-[145px] p-2 flex justify-center items-center bg-cover bg-center bg-no-repeat group border border-gray-300 rounded-full">
 									<Image
 										src={"/rounded-text.png"}
-										width={141}
-										height={148}
+										width={127}
+										height={133}
 										alt="My projects"
-										className="slow-spin w-full h-full aspect-video"
+										className="slow-spin w-full h-full"
 									/>
 									<HiArrowRight className="absolute text-4xl group-hover:translate-x-2 transition-all duration-300" />
 								</Link>
