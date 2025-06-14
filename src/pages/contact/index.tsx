@@ -61,7 +61,6 @@ const Contact: NextPage = () => {
 		<>
 			<Head>
 				<title>Contact Me</title>
-				<meta name="description" content="Contact Me" />
 			</Head>
 			<Curve>
 				<main className="min-h-[calc(100vh-120px)] pb-12">

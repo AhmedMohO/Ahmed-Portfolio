@@ -10,7 +10,6 @@ export default function About() {
 		<>
 			<Head>
 				<title>About</title>
-				<meta name="description" content="About Me" />
 			</Head>
 			<Curve>
 				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col gap-4 items-center">
