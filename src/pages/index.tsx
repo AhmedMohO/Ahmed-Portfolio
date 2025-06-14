@@ -2,7 +2,7 @@ import Head from "next/head";
 import Curve from "@/components/Curve";
 import Link from "next/link";
 import Image from "next/image";
-import { HiArrowRight } from "react-icons/hi";
+import { HiArrowUp } from "react-icons/hi";
 import { MdDownloadForOffline } from "react-icons/md";
 import Button from "@/components/UI/Button";
 import { motion } from "framer-motion";
@@ -70,7 +70,10 @@ export default function Home() {
 										alt="My projects"
 										className="slow-spin w-full h-full"
 									/>
-									<HiArrowRight className="absolute text-4xl group-hover:translate-x-2 transition-all duration-300" />
+									<div className="absolute text-sm flex flex-col items-center justify-center bg-[var(--main-color)] w-2/3 h-2/3 rounded-full group-hover:bg-[var(--secondary-color)] transition-all duration-300">
+										Click Here
+										<HiArrowUp className="text-xl translate-y-2 group-hover:translate-y-0 transition-all duration-300" />
+									</div>
 								</Link>
 								<Button
 									a
