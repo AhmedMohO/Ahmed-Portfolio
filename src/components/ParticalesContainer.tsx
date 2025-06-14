@@ -1,21 +1,21 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import type { Engine } from "tsparticles-engine";
 
-function ParticalesContainer() {
-	//@ts-expect-error raa
-	const particaleInit = useCallback(async (engine) => {
+const ParticalesContainer = () => {
+	const particlesInit = useCallback(async (engine: Engine) => {
+		const { loadFull } = await import("tsparticles");
 		await loadFull(engine);
 	}, []);
 
-	const particalesLoaded = useCallback(async () => {}, []);
+	const particlesLoaded = useCallback(async () => {}, []);
 
 	return (
 		<Particles
 			className="w-full h-full absolute -z-10 translate-z-0"
 			id="tsparticles"
-			init={particaleInit}
-			loaded={particalesLoaded}
+			init={particlesInit}
+			loaded={particlesLoaded}
 			options={{
 				fullScreen: { enable: false },
 				background: {
@@ -23,7 +23,7 @@ function ParticalesContainer() {
 						value: "",
 					},
 				},
-				fps_limit: 120,
+				fpsLimit: 60,
 				interactivity: {
 					events: {
 						resize: true,
@@ -40,15 +40,14 @@ function ParticalesContainer() {
 						opacity: 0.5,
 						width: 1,
 					},
-					collisions: {
-						enable: true,
-					},
 					move: {
 						direction: "none",
 						enable: true,
-						outModes: "bounce",
+						outModes: {
+							default: "bounce",
+						},
 						random: false,
-						speed: 1,
+						speed: 0.8,
 						straight: false,
 					},
 					number: {
@@ -149,6 +148,6 @@ function ParticalesContainer() {
 		// 	}}
 		// />
 	);
-}
+};
 
 export default ParticalesContainer;
