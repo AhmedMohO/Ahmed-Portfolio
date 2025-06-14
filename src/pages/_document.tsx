@@ -5,7 +5,6 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<meta charSet="UTF-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta
 					name="og:description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
