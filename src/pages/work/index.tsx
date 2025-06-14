@@ -78,7 +78,7 @@ function Work({ slides }: WorkProps) {
 							className="w-full max-h-[500px] overflow-hidden"
 							spaceBetween={10}
 							freeMode
-							autoplay={{ pauseOnMouseEnter: true, delay: 2500 }}
+							autoplay={{ pauseOnMouseEnter: true, delay: 3000 }}
 							speed={500}
 							observer={true}
 							observeParents={true}
