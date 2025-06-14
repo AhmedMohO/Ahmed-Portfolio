@@ -23,11 +23,11 @@ export default function About() {
 							<span className="text-[var(--main-color)]"> Journey</span> So Far
 						</h1>{" "}
 						<p className="max-lg:text-center text-gray-300">
-							I’m a front-end developer with 3 years of experience who loves
-							turning ideas into sleek, responsive web apps. With a background
-							in business and finance, I bring strategy and creativity to every
-							project. From building e-commerce sites with React and TypeScript
-							to constantly learning what’s next, I’m all about crafting digital
+							I’m a front-end developer with 3 years of experience With a
+							background in business and finance, who loves turning ideas into
+							sleek web apps. I bring strategy and creativity to every project.
+							From building e-commerce sites with React and TypeScript to
+							constantly learning what’s next, I’m all about crafting digital
 							experiences that stand out and deliver real value.
 						</p>
 						<Button

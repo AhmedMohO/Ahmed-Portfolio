@@ -56,7 +56,6 @@ export default memo(function SlideTaps() {
 		<motion.div
 			initial={{ x: 20, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
-			exit={{ x: 20, opacity: 0 }}
 			transition={{ delay: 0.76, duration: 0.6 }}
 			className="min-h-[320px] md:h-[320px] w-full flex flex-col items-center">
 			<ul
