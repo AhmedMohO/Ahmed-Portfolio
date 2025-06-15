@@ -7,10 +7,6 @@ export default function Document() {
 				<meta charSet="UTF-8" />
 				<meta name="title" content="Ahmed's Portfolio" />
 				<meta
-					name="description"
-					content="🚀Explore my projects, skills, and creative journey — all in one place"
-				/>
-				<meta
 					itemProp="description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
