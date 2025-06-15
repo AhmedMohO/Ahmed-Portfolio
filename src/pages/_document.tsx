@@ -10,13 +10,12 @@ export default function Document() {
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
 				<meta content="Ahmed's Portfolio" property="og:site_name" />
-				<meta property="og:image" content="/My_Icon.jpg" />
 
 				<meta
 					itemProp="description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
-				<meta itemProp="image" content="My_Icon.jpg" />
+				<meta itemProp="image" content="/My_Icon.jpg" />
 
 				<meta
 					property="og:url"
@@ -27,14 +26,14 @@ export default function Document() {
 					property="og:description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
-				<meta property="og:image" content="My_Icon.jpg" />
+				<meta property="og:image" content="/My_Icon.jpg" />
 
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta
 					name="twitter:description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
-				<meta name="twitter:image" content="My_Icon.jpg" />
+				<meta name="twitter:image" content="/My_Icon.jpg" />
 
 				<meta name="theme-color" content="#000000" />
 				<meta property="og:type" content="website" />
