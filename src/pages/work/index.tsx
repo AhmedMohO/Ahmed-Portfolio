@@ -44,6 +44,9 @@ function Work({ slides }: WorkProps) {
 		<>
 			<Head>
 				<title>My Work</title>
+				<meta name="twitter:title" content="My Work" />
+				<meta property="og:title" content="My Work" />
+				<meta itemProp="name" content="My Work" />
 			</Head>
 			<Curve>
 				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4">

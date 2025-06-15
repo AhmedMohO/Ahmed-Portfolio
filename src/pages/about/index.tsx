@@ -10,6 +10,9 @@ export default function About() {
 		<>
 			<Head>
 				<title>About</title>
+				<meta name="twitter:title" content="About" />
+				<meta property="og:title" content="About" />
+				<meta itemProp="name" content="About" />
 			</Head>
 			<Curve>
 				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col gap-4 items-center">

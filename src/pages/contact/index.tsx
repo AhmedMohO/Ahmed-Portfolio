@@ -61,6 +61,9 @@ const Contact: NextPage = () => {
 		<>
 			<Head>
 				<title>Contact Me</title>
+				<meta name="twitter:title" content="Contact Me" />
+				<meta property="og:title" content="Contact Me" />
+				<meta itemProp="name" content="Contact Me" />
 			</Head>
 			<Curve>
 				<main className="min-h-[calc(100vh-120px)] pb-12">
