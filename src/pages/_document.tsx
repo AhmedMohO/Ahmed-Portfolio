@@ -5,12 +5,13 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<meta charSet="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+				<meta name="title" content="Ahmed's Portfolio" />
 				<meta
 					name="description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
-				<meta content="Ahmed's Portfolio" property="og:site_name" />
-
 				<meta
 					itemProp="description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
@@ -22,13 +23,14 @@ export default function Document() {
 					content="https://ahmed-port-folio.vercel.app/"
 				/>
 				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Ahmed's Portfolio" />
 				<meta
 					property="og:description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
 				/>
 				<meta property="og:image" content="/My_Icon.jpg" />
+				<meta property="og:site_name" content="Ahmed's Portfolio" />
 
-				<meta name="twitter:card" content="summary_large_image" />
 				<meta
 					name="twitter:description"
 					content="🚀Explore my projects, skills, and creative journey — all in one place"
