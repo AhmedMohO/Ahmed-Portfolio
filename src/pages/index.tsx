@@ -43,7 +43,7 @@ export default function Home() {
 				<meta itemProp="name" content="Home" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col gap-4 items-center justify-center">
+				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col gap-4 items-center">
 					<ParticalesContainer />
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}
