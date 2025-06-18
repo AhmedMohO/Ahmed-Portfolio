@@ -180,6 +180,7 @@ export async function getStaticProps() {
 		props: {
 			slides,
 		},
+		revalidate: 120,
 	};
 }
 
