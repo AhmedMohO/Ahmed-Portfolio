@@ -75,7 +75,7 @@ function Work({ slides }: WorkProps) {
 						initial={{ x: 20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.76, duration: 0.6 }}
-						className="relative w-full lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3">
+						className="relative w-full lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3 max-sm:pb-22">
 						<Swiper
 							className="w-full max-h-[500px] overflow-hidden"
 							spaceBetween={10}

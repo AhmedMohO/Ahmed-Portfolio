@@ -104,6 +104,7 @@ export default function Home() {
 									src={`${project.link}`}
 									width={640}
 									height={360}
+									priority
 									alt={`${project.name}`}
 									className="rounded-xl w-full h-full object-cover"
 								/>
