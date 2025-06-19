@@ -71,6 +71,7 @@ export default function Home() {
 										width={127}
 										height={133}
 										alt="My projects"
+										priority
 										className="slow-spin w-full h-full"
 									/>
 									<div className="absolute text-sm flex flex-col items-center justify-center bg-[var(--main-color)] w-2/3 h-2/3 rounded-full group-hover:bg-[var(--secondary-color)] transition-all duration-300">
