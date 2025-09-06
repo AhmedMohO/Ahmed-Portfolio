@@ -93,7 +93,7 @@ function Work({ slides }: WorkProps) {
 							{slides?.map((slide, index) => (
 								<SwiperSlide key={index} className="m-auto">
 									<motion.div
-										className="grid max-[456px]:grid-cols-[repeat(auto-fit,minmax(123px,1fr))] grid-cols-[repeat(auto-fit,minmax(185px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(270px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(260px,1fr))] min-[1024px]:max-[1111px]:!grid-cols-[repeat(auto-fit,minmax(216px,1fr))] gap-4 cursor-pointer"
+										className="grid max-[456px]:grid-cols-[repeat(auto-fit,minmax(123px,1fr))] grid-cols-[repeat(auto-fit,minmax(185px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(270px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(260px,1fr))] min-[1024px]:max-[1111px]:!grid-cols-[repeat(auto-fit,minmax(216px,1fr))] gap-4 cursor-grab"
 										variants={{
 											hidden: { opacity: 0 },
 											show: {
@@ -119,7 +119,7 @@ function Work({ slides }: WorkProps) {
 													className="relative rounded-lg overflow-hidden flex items-center justify-center group">
 													<a
 														href={`${image.path}`}
-														target="_blank"
+														target={image.path !== "#" ? "_blank" : "_self"}
 														className="flex items-center justify-center rounded-xl relative overflow-hidden group">
 														<Image
 															src={`${imageUrl.url()}`}

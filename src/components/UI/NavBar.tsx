@@ -56,7 +56,7 @@ function NavBar() {
 				<motion.div variants={itemVariants}>
 					<Link href="/">
 						<Magnetic
-							className={`bg-[var(--main-color)] p-1.5 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
+							className={`bg-[var(--main-color)] p-3 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
 								pathname === "/" ? "active" : ""
 							}`}>
 							<div className="grid justify-items-center">
@@ -69,7 +69,7 @@ function NavBar() {
 				<motion.div variants={itemVariants}>
 					<Link href="/about">
 						<Magnetic
-							className={`bg-[var(--main-color)] p-1.5 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
+							className={`bg-[var(--main-color)] p-3 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
 								pathname === "/about" ? "active" : ""
 							}`}>
 							<div className="grid justify-items-center">
@@ -82,7 +82,7 @@ function NavBar() {
 				<motion.div variants={itemVariants}>
 					<Link href="/work">
 						<Magnetic
-							className={`bg-[var(--main-color)] p-1.5 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
+							className={`bg-[var(--main-color)] p-3 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
 								pathname === "/work" ? "active" : ""
 							}`}>
 							<div className="grid justify-items-center">
@@ -95,7 +95,7 @@ function NavBar() {
 				<motion.div variants={itemVariants}>
 					<Link href="/contact">
 						<Magnetic
-							className={`bg-[var(--main-color)] p-1.5 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
+							className={`bg-[var(--main-color)] p-3 pr-1.5 lg:p-4 lg:pr-2 rounded-l-3xl before:absolute before:bottom-0 before:left-0 before:right-0 overflow-hidden before:h-0 before:w-full before:transition-all before:duration-300 before:ease-in-out ${
 								pathname === "/contact" ? "active" : ""
 							}`}>
 							<div className="grid justify-items-center">
