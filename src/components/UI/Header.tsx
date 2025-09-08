@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import Magnetic from "./Magnatic";
 import { motion } from "framer-motion";
@@ -46,6 +46,14 @@ function Header() {
 						className="transition-colors hover:text-[var(--main-color)] duration-200"
 						href="https://www.linkedin.com/in/ahmed-mohammed-950574277">
 						<FaLinkedin size={24} />
+					</a>
+				</Magnetic>
+				<Magnetic>
+					<a
+						target="_blank"
+						className="transition-colors hover:text-[var(--main-color)] duration-200"
+						href="https://github.com/BadHunterN1">
+						<FaGithub size={24} />
 					</a>
 				</Magnetic>
 			</motion.div>
