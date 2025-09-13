@@ -2,7 +2,7 @@ import Curve from "@/components/Curve";
 import Button from "@/components/UI/Button";
 import SlideTaps from "@/components/UI/SlideTaps";
 import Head from "next/head";
-import { MdDownloadForOffline } from "react-icons/md";
+import { FaRegEye } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -38,8 +38,8 @@ export default function About() {
 							target="_blank"
 							classNamePropsTwo="!w-fit max-lg:mx-auto"
 							link="https://drive.google.com/file/d/1ZAZqy3NFHBXhEcP896ZqfzxdZybyEKcb/view?usp=sharing">
-							<MdDownloadForOffline className="text-2xl mr-2" />
-							Download CV
+							<FaRegEye className="text-2xl mr-2" />
+							View CV
 						</Button>
 					</motion.div>
 					<SlideTaps />

@@ -3,7 +3,7 @@ import Curve from "@/components/Curve";
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowUp } from "react-icons/hi";
-import { MdDownloadForOffline } from "react-icons/md";
+import { FaRegEye } from "react-icons/fa6";
 import Button from "@/components/UI/Button";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -84,8 +84,8 @@ export default function Home() {
 									target="_blank"
 									classNameProps="max-sm:text-sm"
 									link="https://drive.google.com/file/d/1ZAZqy3NFHBXhEcP896ZqfzxdZybyEKcb/view?usp=sharing">
-									<MdDownloadForOffline className="text-2xl mr-2" />
-									Download CV
+									<FaRegEye className="text-2xl mr-2" />
+									View CV
 								</Button>
 							</div>
 						</div>
