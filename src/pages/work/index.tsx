@@ -49,7 +49,7 @@ function Work({ slides }: WorkProps) {
 				<meta itemProp="name" content="My Work" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4 max-sm:pb-22">
+				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4 max-sm:pb-26">
 					<ParticalesContainer />
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}
@@ -76,6 +76,9 @@ function Work({ slides }: WorkProps) {
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.76, duration: 0.6 }}
 						className="relative w-full lg:max-w-3/5 bg-red-200/10 rounded-2xl p-3">
+						<h3 className="text-[var(--main-color)] text-sm md:text-lg font-bold text-center mb-2">
+							Click on any project to open the live demo!
+						</h3>
 						<Swiper
 							className="w-full max-h-[500px] overflow-hidden"
 							spaceBetween={10}
