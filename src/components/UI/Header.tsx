@@ -52,7 +52,7 @@ function Header() {
 					<a
 						target="_blank"
 						className="transition-colors hover:text-[var(--main-color)] duration-200"
-						href="https://github.com/BadHunterN1">
+						href="https://github.com/AhmedMohO">
 						<FaGithub size={24} />
 					</a>
 				</Magnetic>
