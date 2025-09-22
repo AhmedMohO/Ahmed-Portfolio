@@ -49,7 +49,7 @@ function Work({ slides }: WorkProps) {
 				<meta itemProp="name" content="My Work" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4 max-sm:pb-26">
+				<main className="min-h-[calc(100vh-120px)] flex max-lg:flex-col items-center gap-4 max-sm:pb-32">
 					<ParticalesContainer />
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}
@@ -153,7 +153,7 @@ function Work({ slides }: WorkProps) {
 								</SwiperSlide>
 							))}
 						</Swiper>
-						<div className="absolute !-bottom-4 mx-auto w-full pagination flex justify-center gap-2"></div>
+						<div className="absolute !-bottom-10 !left-1/2 !w-fit !-translate-x-1/2 bg-black/30 backdrop-blur-md rounded-full px-3 py-1.5 border border-white/20 pagination flex justify-center items-center gap-2"></div>
 					</motion.div>
 				</main>
 			</Curve>
