@@ -184,13 +184,17 @@ const aboutData: TabData[] = [
 			},
 			{
 				title: "Bachelor of Commerce",
-				stage: "Egypt",
+				stage: "Graduated With Honor Degree",
 			},
 		],
 	},
 	{
 		title: "experience",
 		info: [
+			{
+				title: "Meshwark Project (Public Transportation Tracker)",
+				stage: "Aug 2025 - Aug 2025",
+			},
 			{
 				title: "E-Commerce Website for Digital Gift Cards",
 				stage: "Mar 2025 - Apr 2025",
@@ -200,12 +204,12 @@ const aboutData: TabData[] = [
 				stage: "Jan 2025 - Feb 2025",
 			},
 			{
-				title: "More Front-End Projects!",
-				stage: "Mar 2023 - Jan 2025",
-			},
-			{
 				title: "Eshada Energy Website",
 				stage: "Jan 2023 - Feb 2023",
+			},
+			{
+				title: "Working in Egyptian Information Technology Foundation (INFC)",
+				stage: "Apr 2022 - Sep 2024",
 			},
 		],
 	},
@@ -213,12 +217,16 @@ const aboutData: TabData[] = [
 		title: "Certifications & Courses",
 		info: [
 			{
-				title: "Next JS",
-				stage: "Nov 2024 - Jan 2025",
+				title: "Front End (React Track)",
+				stage: "July 2025 - Sep 2025",
 			},
 			{
-				title: "React JS",
-				stage: "Feb 2024 - Nov 2024",
+				title: "IELTS Course",
+				stage: "Apr 2025 - Jun 2025 ",
+			},
+			{
+				title: "React JS & Next JS",
+				stage: "Feb 2024 - Feb 2025",
 			},
 			{
 				title: "Internal Core Competency Certification IC3",
