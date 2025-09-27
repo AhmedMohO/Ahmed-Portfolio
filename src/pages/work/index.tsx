@@ -19,6 +19,7 @@ import { urlFor } from "../../sanity/lib/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
+import { cn } from "../../../utils/utils";
 
 interface Slide {
 	images: {
@@ -96,7 +97,10 @@ function Work({ slides }: WorkProps) {
 							{slides?.map((slide, index) => (
 								<SwiperSlide key={index} className="m-auto">
 									<motion.div
-										className="grid max-[456px]:grid-cols-[repeat(auto-fit,minmax(123px,1fr))] grid-cols-[repeat(auto-fit,minmax(185px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(270px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(260px,1fr))] min-[1024px]:max-[1111px]:!grid-cols-[repeat(auto-fit,minmax(216px,1fr))] gap-4 cursor-grab"
+										className={cn("grid gap-4 cursor-grab", {
+											"grid-cols-2": slide.images?.length === 2,
+											"grid-cols-2 grid-rows-2": slide.images?.length !== 2,
+										})}
 										variants={{
 											hidden: { opacity: 0 },
 											show: {
@@ -119,7 +123,13 @@ function Work({ slides }: WorkProps) {
 														show: { scale: 1, opacity: 1 },
 													}}
 													transition={{ duration: 0.6 }}
-													className="relative rounded-lg overflow-hidden flex items-center justify-center group">
+													className={cn(
+														"relative rounded-lg overflow-hidden flex items-center justify-center group",
+														{
+															"row-span-2":
+																slide.images?.length === 3 && index === 2,
+														}
+													)}>
 													<a
 														href={`${image.path}`}
 														target={image.path !== "#" ? "_blank" : "_self"}
@@ -162,7 +172,7 @@ function Work({ slides }: WorkProps) {
 }
 
 export async function getStaticProps() {
-	const query = `*[_type == "slide"] | order(_createdAt asc){
+	const query = `*[_type == "slide"] | order(_createdAt desc){
 		images[]{
 			date,
 			title,
