@@ -9,7 +9,7 @@ import Head from "next/head";
 const sora = Sora({
 	subsets: ["latin"],
 	variable: "--font-sora",
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+	weight: ["300", "400", "500", "700"],
 });
 export default function App({ Component, pageProps, router }: AppProps) {
 	return (

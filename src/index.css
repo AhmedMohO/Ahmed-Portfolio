@@ -46,7 +46,7 @@
 		animation: slow-spin 8s linear infinite;
 	}
 	.pagination .swiper-pagination-bullet {
-		@apply w-6 h-6 !bg-[var(--secondary-color)] rounded-full transition-all duration-200;
+		@apply !w-2.5 !h-2.5 !bg-[var(--secondary-color)] rounded-full transition-all duration-200;
 	}
 
 	.pagination .swiper-pagination-bullet-active {
