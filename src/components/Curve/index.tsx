@@ -64,7 +64,7 @@ export default function Curve({ children }: CurveProps) {
 			/>
 			<motion.p
 				className="fixed left-1/2 top-[50%] text-white flex items-center text-[46px] z-30 -translate-x-1/2 text-center pointer-events-none"
-				{...anim(text)}>
+				{...anim(text as unknown as Variants)}>
 				<GoDotFill size={30} />
 				{routes[router.route]}
 			</motion.p>
@@ -101,8 +101,10 @@ const SVG = ({ height, width }: SVGProps) => {
 	return (
 		<motion.svg
 			className="fixed h-[150%] z-20 w-screen pointer-events-none left-0 top-0"
-			{...anim(translate)}>
-			<motion.path {...anim(curve(initialPath, targetPath))} />
+			{...anim(translate as unknown as Variants)}>
+			<motion.path
+				{...anim(curve(initialPath, targetPath) as unknown as Variants)}
+			/>
 		</motion.svg>
 	);
 };
