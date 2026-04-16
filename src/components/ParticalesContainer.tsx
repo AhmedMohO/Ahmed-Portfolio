@@ -1,21 +1,22 @@
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import type { Engine } from "tsparticles-engine";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticalesContainer = () => {
-	const particlesInit = useCallback(async (engine: Engine) => {
-		const { loadFull } = await import("tsparticles");
-		await loadFull(engine);
+	const [init, setInit] = useState(false);
+
+	useEffect(() => {
+		initParticlesEngine(async (engine) => {
+			await loadSlim(engine);
+		}).then(() => setInit(true));
 	}, []);
 
-	const particlesLoaded = useCallback(async () => {}, []);
+	if (!init) return null;
 
 	return (
 		<Particles
 			className="w-full h-full absolute -z-10 translate-z-0"
 			id="tsparticles"
-			init={particlesInit}
-			loaded={particlesLoaded}
 			options={{
 				fullScreen: { enable: false },
 				background: {
@@ -26,7 +27,7 @@ const ParticalesContainer = () => {
 				fpsLimit: 60,
 				interactivity: {
 					events: {
-						resize: true,
+						resize: { enable: true },
 					},
 				},
 				particles: {
@@ -53,7 +54,6 @@ const ParticalesContainer = () => {
 					number: {
 						density: {
 							enable: true,
-							area: 800,
 						},
 						value: 40,
 					},

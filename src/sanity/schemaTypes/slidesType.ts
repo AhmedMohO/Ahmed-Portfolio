@@ -1,5 +1,20 @@
 import { defineType, defineField } from 'sanity';
 
+const MONTHS = [
+    { title: 'January', value: 'January' },
+    { title: 'February', value: 'February' },
+    { title: 'March', value: 'March' },
+    { title: 'April', value: 'April' },
+    { title: 'May', value: 'May' },
+    { title: 'June', value: 'June' },
+    { title: 'July', value: 'July' },
+    { title: 'August', value: 'August' },
+    { title: 'September', value: 'September' },
+    { title: 'October', value: 'October' },
+    { title: 'November', value: 'November' },
+    { title: 'December', value: 'December' },
+];
+
 export const slide = defineType({
     name: 'slide',
     title: 'Slide',
@@ -32,12 +47,50 @@ export const slide = defineType({
                             validation: (Rule) => Rule.required(),
                         }),
                         defineField({
-                            name: 'date',
-                            title: 'Date',
+                            name: 'month',
+                            title: 'Month',
                             type: 'string',
+                            options: {
+                                list: MONTHS,
+                                layout: 'dropdown',
+                            },
                             validation: (Rule) => Rule.required(),
                         }),
+                        defineField({
+                            name: 'year',
+                            title: 'Year',
+                            type: 'number',
+                            validation: (Rule) =>
+                                Rule.required()
+                                    .min(2000)
+                                    .max(new Date().getFullYear())
+                                    .integer(),
+                        }),
+                        defineField({
+                            name: 'tags',
+                            title: 'Tags',
+                            type: 'array',
+                            of: [{ type: 'string' }],
+                            options: {
+                                layout: 'tags',
+                            },
+                        }),
                     ],
+                    preview: {
+                        select: {
+                            title: 'title',
+                            media: 'image',
+                            month: 'month',
+                            year: 'year',
+                        },
+                        prepare({ title, media, month, year }) {
+                            return {
+                                title,
+                                media,
+                                subtitle: month && year ? `${month} ${year}` : undefined,
+                            };
+                        },
+                    },
                 },
             ],
             validation: (Rule) => Rule.required().min(1).max(4),
@@ -49,4 +102,4 @@ export const slide = defineType({
             media: 'images.0.image',
         },
     },
-}); 
+});

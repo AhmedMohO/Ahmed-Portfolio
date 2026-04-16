@@ -11,15 +11,15 @@ const ParticalesContainer = dynamic(
 	() => import("@/components/ParticalesContainer"),
 	{
 		ssr: false,
-	}
+	},
 );
 
 import { client } from "../../sanity/lib/client";
 import { urlFor } from "../../sanity/lib/image";
+import { cn } from "../../../utils/utils";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-import { cn } from "../../../utils/utils";
 
 interface Slide {
 	images: {
@@ -128,7 +128,7 @@ function Work({ slides }: WorkProps) {
 														{
 															"row-span-2":
 																slide.images?.length === 3 && index === 2,
-														}
+														},
 													)}>
 													<a
 														href={`${image.path}`}
