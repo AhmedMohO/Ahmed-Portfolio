@@ -18,7 +18,7 @@ const ParticalesContainer = () => {
 			className="w-full h-full absolute -z-10 translate-z-0"
 			id="tsparticles"
 			options={{
-				fullScreen: { enable: false },
+				fullScreen: { enable: true },
 				background: {
 					color: {
 						value: "",
@@ -55,7 +55,7 @@ const ParticalesContainer = () => {
 						density: {
 							enable: true,
 						},
-						value: 40,
+						value: 80,
 					},
 					opacity: {
 						value: 0.5,

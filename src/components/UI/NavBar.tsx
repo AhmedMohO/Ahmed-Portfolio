@@ -106,39 +106,45 @@ function NavBar() {
 				</motion.div>
 			</motion.div>
 			<motion.div
-				initial={{ y: -30, opacity: 0 }}
+				initial={{ y: 30, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ delay: 0.76, duration: 0.6 }}
-				className="fixed p-3 mx-2 flex justify-between items-center bottom-5 left-0 right-0 md:hidden bg-gray-200/30 text-blue-100 rounded-4xl z-20">
-				<Link className={`${pathname === "/" ? "active-m" : ""}`} href="/">
-					<div className="grid justify-items-center">
-						<AiOutlineHome className="text-lg lg:text-2xl" />
-						<span className=""> Home</span>
+				className="fixed pb-2 pt-3 px-6 mx-4 flex justify-between items-end bottom-5 left-0 right-0 md:hidden bg-[#1c1a29]/95 border border-white/10 backdrop-blur-xl text-gray-400 rounded-[24px] z-50 shadow-2xl">
+				
+				<Link href="/" className="relative flex flex-col items-center w-12">
+					<div className={`transition-all duration-300 flex items-center justify-center ${pathname === "/" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>
+						<AiOutlineHome className={pathname === "/" ? "text-[26px]" : ""} />
 					</div>
+					<span className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						Home
+					</span>
 				</Link>
-				<Link
-					className={`${pathname === "/about" ? "active-m" : ""}`}
-					href="/about">
-					<div className="grid justify-items-center">
-						<TbInfoOctagon className="text-lg lg:text-2xl" />
-						<span className=""> About</span>
+				
+				<Link href="/about" className="relative flex flex-col items-center w-12">
+					<div className={`transition-all duration-300 flex items-center justify-center ${pathname === "/about" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>
+						<TbInfoOctagon className={pathname === "/about" ? "text-[26px]" : ""} />
 					</div>
+					<span className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/about" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						About
+					</span>
 				</Link>
-				<Link
-					className={`${pathname === "/work" ? "active-m" : ""}`}
-					href="/work">
-					<div className="grid justify-items-center">
-						<SiWorkplace className="text-lg lg:text-2xl" />
-						<span className=""> Work</span>
+				
+				<Link href="/work" className="relative flex flex-col items-center w-12">
+					<div className={`transition-all duration-300 flex items-center justify-center ${pathname === "/work" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>
+						<SiWorkplace className={pathname === "/work" ? "text-[22px]" : ""} />
 					</div>
+					<span className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/work" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						Work
+					</span>
 				</Link>
-				<Link
-					className={`${pathname === "/contact" ? "active-m" : ""}`}
-					href="/contact">
-					<div className="grid justify-items-center">
-						<TiMessages className="text-lg lg:text-2xl" />
-						<span className=""> Contact</span>
+				
+				<Link href="/contact" className="relative flex flex-col items-center w-12">
+					<div className={`transition-all duration-300 flex items-center justify-center ${pathname === "/contact" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[25px] relative"}`}>
+						<TiMessages className={pathname === "/contact" ? "text-[28px]" : ""} />
 					</div>
+					<span className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/contact" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						Contact
+					</span>
 				</Link>
 			</motion.div>
 		</nav>

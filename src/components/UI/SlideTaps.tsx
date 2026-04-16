@@ -20,10 +20,12 @@ export default memo(function SlideTaps() {
 	const activeTabRef = useRef<{
 		left: number;
 		width: number;
-	}>({ left: 0, width: 0 });
+		top: number;
+		height: number;
+	}>({ left: 0, width: 0, top: 0, height: 0 });
 	const [activeTab, setActiveTab] = useState(0);
-	const [position, setPosition] = useState({ width: 0, left: 0 });
-	const [currentPosition, setCurrentPosition] = useState({ width: 0, left: 0 });
+	const [position, setPosition] = useState({ width: 0, left: 0, top: 0, height: 0 });
+	const [currentPosition, setCurrentPosition] = useState({ width: 0, left: 0, top: 0, height: 0 });
 
 	useEffect(() => {
 		prevLeftPositionRef.current = position.left;
@@ -57,12 +59,10 @@ export default memo(function SlideTaps() {
 			initial={{ x: 20, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ delay: 0.76, duration: 0.6 }}
-			className="min-h-[320px] md:h-[320px] w-full flex flex-col items-center">
+			className="w-full flex flex-col items-start">
 			<ul
 				onMouseLeave={handleResetPosition}
-				className={
-					"flex items-center justify-center relative w-fit rounded-full"
-				}>
+				className="flex items-center relative w-full sm:w-auto mb-4 bg-white/5 rounded-xl overflow-hidden flex-wrap">
 				{aboutData.map((data, index) => (
 					<Tap
 						key={index}
@@ -75,11 +75,8 @@ export default memo(function SlideTaps() {
 				))}
 				<motion.div
 					animate={position}
-					className={`absolute z-0 h-10 w-36 bg-[var(--secondary-color)] ${
-						prevLeftPositionRef.current < position.left
-							? "-skew-x-12"
-							: "skew-x-12"
-					}  self-center transition-transform duration-400`}
+					transition={{ type: "spring", stiffness: 400, damping: 30 }}
+					className="absolute z-0 bg-[#e27500] rounded-lg shadow-[0_0_12px_rgba(226,117,0,0.5)]"
 				/>
 			</ul>
 			<motion.div
@@ -97,7 +94,7 @@ export default memo(function SlideTaps() {
 						},
 					},
 				}}
-				className="py-2 xl:py-6 max-md:pb-22 flex flex-col gap-y-3 xl:gap-y-4 items-center xl:items-start w-full">
+				className="flex flex-col gap-y-3 w-full">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={activeTab}
@@ -115,34 +112,42 @@ export default memo(function SlideTaps() {
 							},
 						}}
 						className="w-full">
-						{aboutData[activeTab].info.map((item, index) => (
-							<motion.div
-								key={index}
-								variants={{
-									hidden: { opacity: 0, y: -20 },
-									visible: {
-										opacity: 1,
-										y: 0,
-									},
-								}}
-								transition={{
-									duration: 0.3,
-									ease: "easeOut",
-								}}
-								className="flex flex-col flex-wrap justify-between md:flex-row gap-x-2 py-1 items-center w-full border-b text-white/60">
-								<div className="font-light mb-2 md:mb-0">{item.title}</div>
-								<div className="">{item.stage}</div>
-								{item.icons && (
-									<div className="flex gap-x-4">
-										{item.icons.map((icon, index) => (
-											<div key={index} className="text-2xl text-white">
-												{icon}
-											</div>
-										))}
+						<div className="flex flex-col gap-3 w-full h-full max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+							{aboutData[activeTab].info.map((item, index) => (
+								<motion.div
+									key={index}
+									variants={{
+										hidden: { opacity: 0, y: -10 },
+										visible: {
+											opacity: 1,
+											y: 0,
+										},
+									}}
+									transition={{
+										duration: 0.3,
+										ease: "easeOut",
+									}}
+									className="flex flex-col md:flex-row justify-between items-center gap-y-2 py-4 px-6 md:px-5 w-full bg-[#18131e]/70 border border-white/5 group backdrop-blur-sm rounded-[12px] text-gray-300 shadow-lg hover:shadow-[0_0_12px_rgba(226,117,0,0.5)] hover:bg-[#e27500] transition-all duration-300">
+									<div className="font-medium text-white/90 text-center md:text-left max-md:text-[15px]">
+										{item.title}
 									</div>
-								)}
-							</motion.div>
-						))}
+									<div className="text-sm text-gray-400 group-hover:text-white whitespace-nowrap">
+										{item.stage}
+									</div>
+									{item.icons && (
+										<div className="flex gap-x-4">
+											{item.icons.map((icon, idx) => (
+												<div
+													key={idx}
+													className="text-[26px] text-white/80 hover:text-[var(--main-color)] transition-colors">
+													{icon}
+												</div>
+											))}
+										</div>
+									)}
+								</motion.div>
+							))}
+						</div>
 					</motion.div>
 				</AnimatePresence>
 			</motion.div>
