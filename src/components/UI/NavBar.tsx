@@ -50,12 +50,12 @@ function NavBar() {
 			initial={{ x: 20, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ delay: 0.76, duration: 0.6 }}
-			className="hidden fixed md:flex flex-col justify-center right-0 h-screen z-30 text-xs items-center px-6 bg-[#161233]">
+			className="fixed right-0 w-23 h-screen md:bg-[#161233] pointer-events-none z-30">
 			<motion.div
 				variants={containerVariants}
 				initial="hidden"
 				animate="visible"
-				className="flex flex-col gap-5 lg:gap-7">
+				className="hidden md:flex fixed flex-col gap-5 lg:gap-7 !right-5 top-1/2 -translate-y-1/2 z-30 text-xs items-center pointer-events-auto">
 				<motion.div variants={itemVariants}>
 					<Link href="/" className="flex flex-col items-center gap-1.5 group">
 						<Magnetic>
@@ -126,7 +126,7 @@ function NavBar() {
 				initial={{ y: 30, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ delay: 0.76, duration: 0.6 }}
-				className="fixed pb-2 pt-3 px-6 mx-4 flex justify-between items-end bottom-5 left-0 right-0 md:hidden bg-[#1c1a29]/95 border border-white/10 backdrop-blur-xl text-gray-400 rounded-[24px] z-50 shadow-2xl">
+				className="fixed pb-2 pt-3 px-6 mx-4 flex justify-between items-end bottom-5 left-0 right-0 md:hidden bg-[#1c1a29]/95 border border-white/10 backdrop-blur-xl text-gray-400 rounded-[24px] z-50 shadow-2xl pointer-events-auto">
 				<Link href="/" className="relative flex flex-col items-center w-12">
 					<div
 						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>

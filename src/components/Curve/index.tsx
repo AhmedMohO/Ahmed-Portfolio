@@ -57,13 +57,13 @@ export default function Curve({ children }: CurveProps) {
 	return (
 		<section className="relative wrapper pb-28 pt-30">
 			<div
-				className={`fixed inset-0 z-20 pointer-events-none transition-opacity duration-0 delay-100 ${
+				className={`fixed inset-0 z-35 pointer-events-none transition-opacity duration-0 delay-100 ${
 					dimensions.width == null ? "opacity-100" : "opacity-0"
 				}`}
 				style={{ backgroundColor: "black" }}
 			/>
 			<motion.p
-				className="fixed left-1/2 top-[50%] text-white flex items-center text-[46px] z-30 -translate-x-1/2 text-center pointer-events-none"
+				className="fixed left-1/2 top-[50%] text-white flex items-center text-[46px] z-45 -translate-x-1/2 text-center pointer-events-none"
 				{...anim(text as unknown as Variants)}>
 				<GoDotFill size={30} />
 				{routes[router.route]}
@@ -100,7 +100,7 @@ const SVG = ({ height, width }: SVGProps) => {
 
 	return (
 		<motion.svg
-			className="fixed h-[150%] z-20 w-screen pointer-events-none left-0 top-0"
+			className="fixed h-[150%] z-40 w-screen pointer-events-none left-0 top-0"
 			{...anim(translate as unknown as Variants)}>
 			<motion.path
 				{...anim(curve(initialPath, targetPath) as unknown as Variants)}

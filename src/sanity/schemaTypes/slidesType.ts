@@ -17,7 +17,7 @@ const MONTHS = [
 
 export const slide = defineType({
     name: 'slide',
-    title: 'Slide',
+    title: 'Slide (Legacy)',
     type: 'document',
     fields: [
         defineField({
@@ -45,6 +45,12 @@ export const slide = defineType({
                             title: 'Link',
                             type: 'string',
                             validation: (Rule) => Rule.required(),
+                        }),
+                        defineField({
+                            name: 'isFeatured',
+                            title: 'Featured Project',
+                            type: 'boolean',
+                            initialValue: false,
                         }),
                         defineField({
                             name: 'month',

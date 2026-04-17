@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function Header() {
 	return (
-		<header className="absolute top-0 left-0 right-0 z-10 flex justify-center items-center wrapper py-4 pt-6">
+		<header className="absolute top-0 left-0 right-0 z-35 flex justify-center items-center wrapper py-4 pt-6">
 			<motion.div
 				initial={{ y: -20, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
