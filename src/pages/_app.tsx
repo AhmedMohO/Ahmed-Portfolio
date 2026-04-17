@@ -17,7 +17,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 			</Head>
-			<div className={`${sora.className} pt-30`}>
+			<div className={`${sora.className}`}>
 				<Header />
 				<NavBar />
 				<AnimatePresence mode="wait">
