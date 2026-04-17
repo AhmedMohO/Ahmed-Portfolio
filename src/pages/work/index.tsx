@@ -155,6 +155,7 @@ function Work({ projects }: WorkProps) {
 					<Image
 						src={`${imageUrl.url()}`}
 						fill
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt={project.title}
 						className="object-cover group-hover:scale-105 transition-transform duration-700 z-20"
 					/>
@@ -288,16 +289,23 @@ function Work({ projects }: WorkProps) {
 											All Projects
 										</h2>
 
-										<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-											<AnimatePresence mode="wait">
+										<AnimatePresence mode="wait">
+											<motion.div
+												key={`page-${currentPage}`}
+												initial={{ opacity: 0, y: 10 }}
+												animate={{ opacity: 1, y: 0 }}
+												exit={{ opacity: 0, y: -10 }}
+												transition={{ duration: 0.3 }}
+												className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+											>
 												{paginatedNormalProjects.map((project, index) => (
 													<ProjectCard
 														key={`${project.title}-${index}-${currentPage}`}
 														project={project}
 													/>
 												))}
-											</AnimatePresence>
-										</div>
+											</motion.div>
+										</AnimatePresence>
 
 										{/* Pagination */}
 										{totalPages > 1 && (

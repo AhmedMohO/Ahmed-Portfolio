@@ -34,7 +34,7 @@ export default function About() {
 						className="relative w-full lg:w-[45%] flex justify-center items-center mt-6 lg:mt-0 z-10">
 						<div className="relative w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
 							<Image
-								src="/My_Icon.jpg"
+								src="/photo_2026-04-17_22-36-17.jpg"
 								alt="Ahmed Moh."
 								fill
 								className="object-contain drop-shadow-[0_0_35px_rgba(226,117,0,0.15)] mix-blend-screen mix-blend-lighten z-10 rounded-full"
