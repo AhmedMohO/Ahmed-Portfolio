@@ -37,6 +37,7 @@ export default function About() {
 								src="/photo_2026-04-17_22-36-17.jpg"
 								alt="Ahmed Moh."
 								fill
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 								className="object-contain drop-shadow-[0_0_35px_rgba(226,117,0,0.15)] mix-blend-screen mix-blend-lighten z-10 rounded-full"
 								priority
 							/>
@@ -69,15 +70,13 @@ export default function About() {
 						</h1>
 						<div className="text-gray-300 text-sm md:text-[15px] leading-relaxed flex flex-col gap-5 max-lg:text-center md:max-w-[90%]">
 							<p>
-								From analyzing financial models to crafting immersive digital
-								experiences, my journey to front-end development has been driven
-								by a passion for problem-solving and creativity.
+								Front-End Developer skilled in React, TypeScript, and state management, with experience
+								building optimized, user-focused web applications.
 							</p>
 							<p>
-								With a background in business and finance, I bring a strategic
-								approach to building clean, responsive web applications. I
-								leverage React, TypeScript, and modern frameworks to turn
-								complex ideas into user-focused solutions.
+								Strong background in ERP systems and business processes, supported by certifications
+								in Business Administration, HR, and PFA. Recognized for a problem-solving mindset,
+								leadership, and continuous learning.
 							</p>
 						</div>
 

@@ -24,8 +24,18 @@ export default memo(function SlideTaps() {
 		height: number;
 	}>({ left: 0, width: 0, top: 0, height: 0 });
 	const [activeTab, setActiveTab] = useState(0);
-	const [position, setPosition] = useState({ width: 0, left: 0, top: 0, height: 0 });
-	const [currentPosition, setCurrentPosition] = useState({ width: 0, left: 0, top: 0, height: 0 });
+	const [position, setPosition] = useState({
+		width: 0,
+		left: 0,
+		top: 0,
+		height: 0,
+	});
+	const [currentPosition, setCurrentPosition] = useState({
+		width: 0,
+		left: 0,
+		top: 0,
+		height: 0,
+	});
 
 	useEffect(() => {
 		prevLeftPositionRef.current = position.left;
@@ -139,7 +149,7 @@ export default memo(function SlideTaps() {
 											{item.icons.map((icon, idx) => (
 												<div
 													key={idx}
-													className="text-[26px] text-white/80 hover:text-[var(--main-color)] transition-colors">
+													className="text-[26px] text-white/80 hover:text-white transition-colors">
 													{icon}
 												</div>
 											))}
@@ -160,7 +170,7 @@ const aboutData: TabData[] = [
 		title: "skills",
 		info: [
 			{
-				title: "Web Development",
+				title: "Frontend Development",
 				icons: [
 					<FaHtml5 key="html5" />,
 					<FaCss3 key="css3" />,
@@ -171,12 +181,24 @@ const aboutData: TabData[] = [
 				],
 			},
 			{
+				title: "React, Next.js, Redux, Tailwind, GSAP",
+				stage: "Frontend ecosystem",
+			},
+			// {
+			// 	title: "Node.js, REST APIs, GraphQL, MongoDB",
+			// 	stage: "Backend & Data",
+			// },
+			// {
+			// 	title: "Git, Docker, Vercel",
+			// 	stage: "DevOps & Platforms",
+			// },
+			{
 				title: "Language - Arabic",
 				stage: "Native Speaker",
 			},
 			{
 				title: "Language - English",
-				stage: "Highly Proficient (B2 English)",
+				stage: "C1",
 			},
 		],
 	},
@@ -189,7 +211,7 @@ const aboutData: TabData[] = [
 			},
 			{
 				title: "Bachelor of Commerce",
-				stage: "Graduated With Honor Degree",
+				stage: "Graduated with highest Honors.",
 			},
 		],
 	},
@@ -197,53 +219,70 @@ const aboutData: TabData[] = [
 		title: "experience",
 		info: [
 			{
-				title: "Meshwark Project (Public Transportation Tracker)",
-				stage: "Aug 2025 - Aug 2025",
+				title: "Zakham Company (Front-End Developer)",
+				stage: "Sep 2025 - May 2026",
 			},
 			{
-				title: "E-Commerce Website for Digital Gift Cards",
+				title: "ITI - Professional Training Program (Open Source Track)",
+				stage: "Nov 2025 - Present",
+			},
+			{
+				title: "Meshwark - Public Transportation Tracker",
+				stage: "Aug 2025",
+			},
+			{
+				title: "E-Commerce Website - Digital Gift Cards",
 				stage: "Mar 2025 - Apr 2025",
 			},
 			{
-				title: "Awwards Website",
-				stage: "Jan 2025 - Feb 2025",
-			},
-			{
-				title: "Eshada Energy Website",
-				stage: "Jan 2023 - Feb 2023",
-			},
-			{
-				title: "Working in Egyptian Information Technology Foundation (INFC)",
+				title: "Egyptian Information Technology Foundation (INFC)",
 				stage: "Apr 2022 - Sep 2024",
 			},
 		],
 	},
 	{
-		title: "Certifications & Courses",
+		title: "Certifications",
 		info: [
 			{
-				title: "Front End (React Track)",
-				stage: "July 2025 - Sep 2025",
+				title: "MongoDB Associate Developer Node.js",
+				stage: "2025",
 			},
 			{
-				title: "IELTS Course",
-				stage: "Apr 2025 - Jun 2025 ",
+				title: "ITI - Front-End React Training",
+				stage: "Jul 2025 - Sep 2025",
 			},
 			{
-				title: "React JS & Next JS",
-				stage: "Feb 2024 - Feb 2025",
+				title: "IELTS - Infinity Academy",
+				stage: "Apr 2025 - Jun 2025",
 			},
 			{
-				title: "Internal Core Competency Certification IC3",
+				title: "PFA and ERP Software Systems",
+				stage: "Sep 2024 - Oct 2024",
+			},
+			{
+				title: "Electronic Accounting",
+				stage: "Sep 2023 - Dec 2023",
+			},
+			{
+				title: "Internal Core Competency Certification (IC3)",
 				stage: "Aug 2023 - Oct 2023",
 			},
 			{
 				title: "Human Resources & Business Administration",
 				stage: "Jun 2023 - Aug 2023",
 			},
+		],
+	},
+	{
+		title: "Courses",
+		info: [
 			{
-				title: "Front-End",
-				stage: "Feb 2022 - Jun 2023 ",
+				title: "React JS & Next JS - Udemy",
+				stage: "Feb 2024 - Feb 2025",
+			},
+			{
+				title: "Front-End Developer - Elzero Web School",
+				stage: "Feb 2022 - Jun 2023",
 			},
 		],
 	},
