@@ -94,7 +94,7 @@ function Work({ projects }: WorkProps) {
 		return allProjects.filter((project) => {
 			const matchTech =
 				selectedTechs.length === 0 ||
-				selectedTechs.some((t) => project.tags?.includes(t));
+				selectedTechs.every((t) => project.tags?.includes(t));
 			const matchYear =
 				selectedYears.length === 0 ||
 				(project.year && selectedYears.includes(String(project.year)));
@@ -144,20 +144,20 @@ function Work({ projects }: WorkProps) {
 				exit={{ opacity: 0, scale: 0.9 }}
 				transition={{ duration: 0.4 }}
 				className={cn(
-					"w-full h-full bg-[#18131e]/80 border border-transparent rounded-[16px] p-3 flex flex-col gap-4 shadow-lg hover:shadow-[0_0_20px_rgba(226,117,0,0.2)] hover:border-[var(--main-color)] transition-all duration-500 overflow-hidden group/card",
+					"w-full h-full bg-[#18131e]/80 border border-transparent rounded-xl p-3 flex flex-col gap-4 shadow-lg hover:shadow-[0_0_20px_rgba(226,117,0,0.2)] hover:border-[var(--main-color)] transition-all duration-500 overflow-hidden group/card",
 					featuredClass,
 				)}>
 				<a
 					href={project.path}
 					target={project.path !== "#" ? "_blank" : "_self"}
 					onClick={(e) => handleProjectClick(e, project.path)}
-					className="relative w-full flex-1 min-h-[200px] rounded-[10px] overflow-hidden group cursor-pointer border border-white/5 z-20">
+					className="relative w-full flex-1 min-h-[200px] rounded-md overflow-hidden group cursor-pointer border border-white/5 z-20">
 					<Image
 						src={`${imageUrl.url()}`}
 						fill
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt={project.title}
-						className="object-cover group-hover:scale-105 transition-transform duration-700 z-20"
+						className="object-cover rounded-md group-hover:scale-105 transition-transform duration-700 z-20"
 					/>
 
 					{/* Hover Overlay mimicking the image design */}
@@ -199,7 +199,7 @@ function Work({ projects }: WorkProps) {
 				<title>My Work</title>
 			</Head>
 			<Curve>
-				<main className="min-h-screen flex flex-col items-center pb-8 pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10 transition-all">
+				<main className="min-h-screen flex flex-col items-center relative z-10 transition-all">
 					<div className="fixed inset-0 -z-10">
 						<ParticalesContainer />
 					</div>
@@ -210,7 +210,7 @@ function Work({ projects }: WorkProps) {
 						className="w-full flex flex-col gap-14 pb-32">
 						{/* Filter Bar */}
 						<div className="relative z-50 w-full bg-[#1c1a29]/60 border border-white/10 rounded-2xl p-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl backdrop-blur-md">
-							<div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full md:w-auto">
+							<div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
 								<div className="flex items-center gap-2 text-[var(--main-color)] font-bold text-[15px] tracking-wider">
 									<BsFilter className="text-xl" />
 									REFINE RESULTS:
@@ -221,6 +221,7 @@ function Work({ projects }: WorkProps) {
 										selectedOptions={selectedTechs}
 										onChange={setSelectedTechs}
 										placeholder="Technologies"
+										showSearch
 									/>
 									<CustomSelect
 										options={availableYears}

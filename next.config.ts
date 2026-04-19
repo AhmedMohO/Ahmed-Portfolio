@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  reactCompiler: true,
   // Optimize bundle size
   experimental: {
     optimizePackageImports: [
