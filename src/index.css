@@ -34,7 +34,7 @@
 
 @layer utilities {
 	.wrapper {
-		@apply w-full 2xl:w-[1420px] md:px-20 px-4 mx-auto;
+		@apply w-full 2xl:w-[1420px] md:px-32 px-4 mx-auto;
 	}
 	.active {
 		@apply before:h-full before:bg-[var(--secondary-color)] font-bold;

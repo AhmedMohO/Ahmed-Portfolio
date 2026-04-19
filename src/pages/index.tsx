@@ -43,11 +43,11 @@ export default function Home() {
 				<meta itemProp="name" content="Home" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex flex-col md:flex-row gap-10 lg:gap-20 justify-center items-center relative">
+				<main className="min-h-[calc(100vh-120px)] flex flex-col md:flex-row gap-14 justify-center items-center relative">
 					<ParticalesContainer />
 
 					{/* Left Side: Gallery and Quick Stats */}
-					<div className="order-2 md:order-1 w-full md:w-[45%] flex flex-col justify-between h-full relative z-10 gap-8">
+					<div className="order-2 md:order-1 flex-2 flex flex-col justify-between h-full relative z-10 gap-8">
 						<motion.div
 							initial={{ x: -20, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
@@ -125,7 +125,7 @@ export default function Home() {
 					</div>
 
 					{/* Right Side: Text & CTA */}
-					<div className="order-1 md:order-2 w-full md:w-[55%] flex flex-col gap-6 relative z-10 md:items-start text-center md:text-left pt-6 md:pt-0">
+					<div className="order-1 md:order-2 flex-2 flex flex-col gap-6 relative z-10 md:items-start text-center md:text-left pt-6 md:pt-0">
 						<motion.h1
 							initial={{ x: 20, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}

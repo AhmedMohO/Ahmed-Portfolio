@@ -24,14 +24,14 @@ export default function About() {
 				<meta itemProp="name" content="About" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative mt-16 md:mt-20 max-md:pb-28 max-w-7xl mx-auto px-4 md:px-0">
+				<main className="min-h-[calc(100vh-120px)] flex flex-col lg:flex-row gap-10 items-center lg:items-start relative wrapepr">
 					<ParticalesContainer />
 					{/* Left Side: Avatar */}
 					<motion.div
 						initial={{ x: -20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.76, duration: 0.6 }}
-						className="relative w-full lg:w-[45%] flex justify-center items-center mt-6 lg:mt-0 z-10">
+						className="relative flex-1 flex justify-center items-center mt-6 lg:mt-0 z-10">
 						<div className="relative w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
 							<Image
 								src="/photo_2026-04-17_22-36-17.jpg"
@@ -59,7 +59,7 @@ export default function About() {
 						initial={{ x: 20, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.8, duration: 0.6 }}
-						className="flex flex-col gap-6 w-full lg:w-[55%] z-10">
+						className="flex flex-col gap-6 flex-3 z-10">
 						<h1 className="text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight max-lg:text-center text-white tracking-tight">
 							About Me – The{" "}
 							<span className="text-[#e27500] drop-shadow-[0_0_10px_rgba(226,117,0,0.4)]">
