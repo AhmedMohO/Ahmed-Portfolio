@@ -47,7 +47,7 @@ export default function Home() {
 					<ParticalesContainer />
 
 					{/* Left Side: Gallery and Quick Stats */}
-					<div className="order-2 md:order-1 flex-2 flex flex-col justify-between h-full relative z-10 gap-8">
+					<div className="order-2 md:order-1 flex-2 flex flex-col justify-between w-full relative z-10 gap-8">
 						<motion.div
 							initial={{ x: -20, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
@@ -84,31 +84,29 @@ export default function Home() {
 								<div className="bg-[#1f2038] rounded-[1rem] p-5 flex-1 flex flex-col gap-3">
 									<div className="flex items-center gap-4">
 										<div className="bg-[var(--main-color)] bg-gradient-to-b from-[#f28e2c] to-[var(--main-color)] p-3 rounded-2xl w-16 h-16 flex items-center justify-center text-white shadow-md">
-											<svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+											<FaUser size={30} />
 										</div>
 										<div className="text-[2.7rem] leading-none font-bold text-white tracking-wide">
 											3+
 										</div>
 									</div>
 									<div className="text-[1.1rem] text-gray-300 font-medium">
-										<span className="text-[#de6810]">Years</span>{" "}
-										Experience
+										<span className="text-[#de6810]">Years</span> Experience
 									</div>
 								</div>
-								
+
 								{/* Quick Stat 2 */}
 								<div className="bg-[#1f2038] rounded-[1rem] p-5 flex-1 flex flex-col gap-3">
 									<div className="flex items-center gap-4">
 										<div className="bg-[var(--main-color)] bg-gradient-to-b from-[#f28e2c] to-[var(--main-color)] p-3 rounded-2xl w-16 h-16 flex items-center justify-center text-white shadow-md">
-											<svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><polygon points="11 12 11 18 16 15 11 12"></polygon></svg>
+											<FaFolder size={30} />
 										</div>
 										<div className="text-[2.7rem] leading-none font-bold text-white tracking-wide">
 											10+
 										</div>
 									</div>
 									<div className="text-[1.1rem] text-gray-300 font-medium">
-										<span className="text-[#de6810]">Projects</span>{" "}
-										Completed
+										<span className="text-[#de6810]">Projects</span> Completed
 									</div>
 								</div>
 							</div>
@@ -125,7 +123,7 @@ export default function Home() {
 					</div>
 
 					{/* Right Side: Text & CTA */}
-					<div className="order-1 md:order-2 flex-2 flex flex-col gap-6 relative z-10 md:items-start text-center md:text-left pt-6 md:pt-0">
+					<div className="order-1 md:order-2 flex-2 flex flex-col gap-6 relative z-10 md:items-start justify-center text-center md:text-left pt-6 md:pt-0">
 						<motion.h1
 							initial={{ x: 20, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}

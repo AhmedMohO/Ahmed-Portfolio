@@ -24,7 +24,7 @@ export default function About() {
 				<meta itemProp="name" content="About" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex flex-col lg:flex-row gap-10 items-center lg:items-start relative wrapepr">
+				<main className="min-h-[calc(100vh-120px)] flex flex-col lg:flex-row gap-10 items-center lg:items-start relative wrapepr pb-24">
 					<ParticalesContainer />
 					{/* Left Side: Avatar */}
 					<motion.div
@@ -70,13 +70,15 @@ export default function About() {
 						</h1>
 						<div className="text-gray-300 text-sm md:text-[15px] leading-relaxed flex flex-col gap-5 max-lg:text-center md:max-w-[90%]">
 							<p>
-								Front-End Developer skilled in React, TypeScript, and state management, with experience
-								building optimized, user-focused web applications.
+								Front-End Developer skilled in React, TypeScript, and state
+								management, with experience building optimized, user-focused web
+								applications.
 							</p>
 							<p>
-								Strong background in ERP systems and business processes, supported by certifications
-								in Business Administration, HR, and PFA. Recognized for a problem-solving mindset,
-								leadership, and continuous learning.
+								Strong background in ERP systems and business processes,
+								supported by certifications in Business Administration, HR, and
+								PFA. Recognized for a problem-solving mindset, leadership, and
+								continuous learning.
 							</p>
 						</div>
 
