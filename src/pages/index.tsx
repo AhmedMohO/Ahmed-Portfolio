@@ -43,7 +43,7 @@ export default function Home() {
 				<meta itemProp="name" content="Home" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] flex flex-col md:flex-row gap-14 justify-center items-center relative">
+				<main className="min-h-[calc(100vh-120px)] max-md:pb-25 flex flex-col md:flex-row gap-14 justify-center items-center relative">
 					<ParticalesContainer />
 
 					{/* Left Side: Gallery and Quick Stats */}
