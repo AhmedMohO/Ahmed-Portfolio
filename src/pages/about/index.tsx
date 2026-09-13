@@ -45,7 +45,7 @@ export default function About() {
 
 						{/* View CV Ring Button */}
 						<Link
-							href="https://drive.google.com/file/d/1ZAZqy3NFHBXhEcP896ZqfzxdZybyEKcb/view?usp=sharing"
+							href="https://drive.google.com/file/d/1cCzztIu2_KpdJF7MivrwVS-oSd3rehMR/view?usp=drive_link"
 							target="_blank"
 							className="absolute -bottom-8 md:-bottom-15 flex flex-col justify-center items-center text-[15px] font-bold w-[115px] h-[115px] rounded-full border-[1.5px] border-[#d97c55]/80 bg-[#1c1314]/70 backdrop-blur-md hover:bg-[#d97c55]/20 hover:scale-105 transition-all duration-300 group z-20 text-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
 							<span className="leading-tight">View</span>
