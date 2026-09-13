@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FaHtml5, FaCss3, FaJs, FaReact } from "react-icons/fa";
-import { SiNextdotjs, SiFramer } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt } from "react-icons/fa";
+import { SiNextdotjs, SiFramer, SiTypescript, SiTailwindcss, SiMongodb, SiNestjs } from "react-icons/si";
 import { memo, useEffect, useRef, useState, ReactNode } from "react";
 import Tap from "./Tap";
 
 interface InfoItem {
 	title: string;
 	stage?: string;
+	description?: string;
 	icons?: ReactNode[];
 }
 
@@ -122,7 +123,7 @@ export default memo(function SlideTaps() {
 							},
 						}}
 						className="w-full">
-						<div className="flex flex-col gap-3 w-full h-full max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+						<div className="flex flex-col gap-3 w-full h-full max-h-[380px] overflow-y-auto pr-2 custom-scrollbar">
 							{aboutData[activeTab].info.map((item, index) => (
 								<motion.div
 									key={index}
@@ -137,24 +138,35 @@ export default memo(function SlideTaps() {
 										duration: 0.3,
 										ease: "easeOut",
 									}}
-									className="flex flex-col md:flex-row justify-between items-center gap-y-2 py-4 px-6 md:px-5 w-full bg-[#18131e]/70 border border-white/5 group backdrop-blur-sm rounded-[12px] text-gray-300 shadow-lg hover:shadow-[0_0_12px_rgba(226,117,0,0.5)] hover:bg-[#e27500] transition-all duration-300">
-									<div className="font-medium text-white/90 text-center md:text-left max-md:text-[15px]">
-										{item.title}
-									</div>
-									<div className="text-sm text-gray-400 group-hover:text-white whitespace-nowrap">
-										{item.stage}
-									</div>
-									{item.icons && (
-										<div className="flex gap-x-4">
-											{item.icons.map((icon, idx) => (
-												<div
-													key={idx}
-													className="text-[26px] text-white/80 hover:text-white transition-colors">
-													{icon}
-												</div>
-											))}
+									className="flex flex-col md:flex-row justify-between items-center gap-y-2 gap-x-4 py-3.5 px-6 md:px-5 w-full bg-[#18131e]/70 border border-white/5 group backdrop-blur-sm rounded-[12px] text-gray-300 shadow-lg hover:shadow-[0_0_12px_rgba(226,117,0,0.5)] hover:bg-[#e27500] transition-all duration-300">
+									<div className="flex flex-col text-center md:text-left gap-1 flex-1">
+										<div className="font-medium text-white/90 group-hover:text-white max-md:text-[15px]">
+											{item.title}
 										</div>
-									)}
+										{item.description && (
+											<div className="text-xs text-gray-400 group-hover:text-white/90 leading-relaxed max-w-[650px]">
+												{item.description}
+											</div>
+										)}
+									</div>
+									<div className="flex items-center gap-4 shrink-0">
+										{item.stage && (
+											<div className="text-sm text-gray-400 group-hover:text-white whitespace-nowrap font-medium">
+												{item.stage}
+											</div>
+										)}
+										{item.icons && (
+											<div className="flex gap-x-3.5">
+												{item.icons.map((icon, idx) => (
+													<div
+														key={idx}
+														className="text-[24px] text-white/80 group-hover:text-white hover:scale-110 transition-all">
+														{icon}
+													</div>
+												))}
+											</div>
+										)}
+									</div>
 								</motion.div>
 							))}
 						</div>
@@ -171,47 +183,54 @@ const aboutData: TabData[] = [
 		info: [
 			{
 				title: "Frontend Development",
+				stage: "Core Stack",
 				icons: [
 					<FaHtml5 key="html5" />,
 					<FaCss3 key="css3" />,
 					<FaJs key="js" />,
+					<SiTypescript key="ts" />,
 					<FaReact key="react" />,
 					<SiNextdotjs key="nextjs" />,
+				],
+			},
+			{
+				title: "React, Next.js, Vue, Angular, Tailwind CSS, Motion, GSAP, Shadcn",
+				stage: "Frontend Ecosystem",
+			},
+			{
+				title: "Node.js, NestJS, REST APIs, GraphQL, MongoDB, MySQL",
+				stage: "Backend & Data",
+				icons: [
+					<FaNodeJs key="node" />,
+					<SiNestjs key="nestjs" />,
+					<SiMongodb key="mongodb" />,
+				],
+			},
+			{
+				title: "React Query, Redux Toolkit, Axios, Zod, React Hook Form",
+				stage: "State & Data Fetching",
+			},
+			{
+				title: "TypeScript, JavaScript, Python, C, C++, Java, OOP & DSA",
+				stage: "Languages & CS",
+			},
+			{
+				title: "Git, Docker, Vercel, Figma-to-Code, Clerk, PayPal SDK",
+				stage: "DevOps & Integrations",
+				icons: [
+					<FaGitAlt key="git" />,
+					<FaDocker key="docker" />,
+					<SiTailwindcss key="tailwind" />,
 					<SiFramer key="framer" />,
 				],
 			},
 			{
-				title: "React, Next.js, Redux, Tailwind, GSAP",
-				stage: "Frontend ecosystem",
-			},
-			// {
-			// 	title: "Node.js, REST APIs, GraphQL, MongoDB",
-			// 	stage: "Backend & Data",
-			// },
-			// {
-			// 	title: "Git, Docker, Vercel",
-			// 	stage: "DevOps & Platforms",
-			// },
-			{
-				title: "Language - Arabic",
-				stage: "Native Speaker",
+				title: "AI Tools – GitHub Copilot & Cursor (AI-Assisted Workflows)",
+				stage: "Accelerated Dev",
 			},
 			{
-				title: "Language - English",
-				stage: "C1",
-			},
-		],
-	},
-	{
-		title: "education",
-		info: [
-			{
-				title: "Mansoura University - Faculty of Commerce",
-				stage: "2021 - 2025",
-			},
-			{
-				title: "Bachelor of Commerce",
-				stage: "Graduated with highest Honors.",
+				title: "Arabic (Native Speaker) • English (B2)",
+				stage: "Languages",
 			},
 		],
 	},
@@ -219,24 +238,50 @@ const aboutData: TabData[] = [
 		title: "experience",
 		info: [
 			{
-				title: "Zakham Company (Front-End Developer)",
-				stage: "Sep 2025 - May 2026",
+				title: "Zakham Company – Front-End Developer",
+				stage: "Sep 2025 – May 2026",
+				description:
+					"Delivered 5 client projects using Next.js App Router, integrated 96+ REST APIs with Axios & React Query (auth, RBAC), and built a reusable library of 70+ Tailwind components.",
 			},
 			{
-				title: "ITI - Professional Training Program (Open Source Track)",
-				stage: "Nov 2025 - Present",
+				title: "AuraPC – AI-Powered PC Market Intelligence SaaS",
+				stage: "May 2026 – Present",
+				description:
+					"Architected a multi-tenant platform with Next.js 16, React 19, TypeScript & MongoDB. Built a RAG pipeline (Vercel AI SDK, Pinecone), LLM function calling, and Puppeteer background scrapers.",
 			},
 			{
-				title: "Meshwark - Public Transportation Tracker",
+				title: "Meshwark – Public Transportation Tracker",
 				stage: "Aug 2025",
+				description:
+					"Led and mentored 7 developer trainees in React best practices; engineered an admin dashboard achieving a 90 Lighthouse score with optimized SEO.",
 			},
 			{
-				title: "E-Commerce Website - Digital Gift Cards",
-				stage: "Mar 2025 - Apr 2025",
+				title: "E-Commerce Website – Digital Gift Cards",
+				stage: "Mar 2025 – Apr 2025",
+				description:
+					"Built full-stack digital gaming store listing 17+ products with React, TypeScript, Redux Toolkit, Clerk authentication, and PayPal payment integration.",
 			},
 			{
 				title: "Egyptian Information Technology Foundation (INFC)",
-				stage: "Apr 2022 - Sep 2024",
+				stage: "Apr 2022 – Sep 2024",
+				description: "Extensive web development foundational experience and practical project execution.",
+			},
+		],
+	},
+	{
+		title: "education",
+		info: [
+			{
+				title: "ITI – Professional Training Program (Open Source Track)",
+				stage: "Nov 2025 – Aug 2026",
+				description:
+					"Information Technology Institute (ITI): Intensive 9-month program covering 25+ technologies including React, Next.js, Node.js, NestJS, MongoDB, MySQL, Docker, OOP, DSA, and Software Architecture.",
+			},
+			{
+				title: "Mansoura University – Faculty of Commerce (Bachelor of Commerce)",
+				stage: "2021 – 2025",
+				description:
+					"Graduated July 2025 with Honors. Strong analytical background in accounting, finance, business management, economics, and strategic decision-making.",
 			},
 		],
 	},
@@ -244,32 +289,32 @@ const aboutData: TabData[] = [
 		title: "Certifications",
 		info: [
 			{
-				title: "MongoDB Associate Developer Node.js",
-				stage: "2025",
+				title: "MongoDB Associate Developer Node.js – MongoDB",
+				stage: "Dec 2025",
 			},
 			{
-				title: "ITI - Front-End React Training",
-				stage: "Jul 2025 - Sep 2025",
+				title: "Front-End React Training – Information Technology Institute (ITI)",
+				stage: "Jul 2025 – Sep 2025",
 			},
 			{
-				title: "IELTS - Infinity Academy",
-				stage: "Apr 2025 - Jun 2025",
+				title: "IELTS – Infinity Academy",
+				stage: "Apr 2025 – Jun 2025",
 			},
 			{
-				title: "PFA and ERP Software Systems",
-				stage: "Sep 2024 - Oct 2024",
+				title: "PFA and ERP Software Systems – Dakahlia Commercial Syndicate",
+				stage: "Sep 2024 – Oct 2024",
 			},
 			{
-				title: "Electronic Accounting",
-				stage: "Sep 2023 - Dec 2023",
+				title: "Electronic Accounting – Mansoura University",
+				stage: "Sep 2023 – Dec 2023",
 			},
 			{
-				title: "Internal Core Competency Certification (IC3)",
-				stage: "Aug 2023 - Oct 2023",
+				title: "Internal Core Competency Certification (IC3) – Mansoura University",
+				stage: "Aug 2023 – Oct 2023",
 			},
 			{
-				title: "Human Resources & Business Administration",
-				stage: "Jun 2023 - Aug 2023",
+				title: "Human Resources and Business Administration – Mansoura University",
+				stage: "Jun 2023 – Aug 2023",
 			},
 		],
 	},
@@ -277,12 +322,12 @@ const aboutData: TabData[] = [
 		title: "Courses",
 		info: [
 			{
-				title: "React JS & Next JS - Udemy",
-				stage: "Feb 2024 - Feb 2025",
+				title: "React JS and Next JS – Udemy (Maximilian Schwarzmüller)",
+				stage: "Feb 2024 – Feb 2025",
 			},
 			{
-				title: "Front-End Developer - Elzero Web School",
-				stage: "Feb 2022 - Jun 2023",
+				title: "Front-End Developer – Elzero Web School",
+				stage: "Feb 2022 – Jun 2023",
 			},
 		],
 	},

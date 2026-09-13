@@ -68,17 +68,19 @@ export default function About() {
 							<br />
 							So Far
 						</h1>
-						<div className="text-gray-300 text-sm md:text-[15px] leading-relaxed flex flex-col gap-5 max-lg:text-center md:max-w-[90%]">
+						<div className="text-gray-300 text-sm md:text-[15px] leading-relaxed flex flex-col gap-4 max-lg:text-center md:max-w-[90%]">
 							<p>
-								Front-End Developer skilled in React, TypeScript, and state
-								management, with experience building optimized, user-focused web
-								applications.
+								Front-End Developer specializing in Next.js, React, TypeScript,
+								and NestJS, with experience building high-performance, scalable
+								web applications through clean architecture, RESTful APIs, and
+								database integration. Comfortable leveraging AI-assisted development
+								workflows to speed up delivery without compromising code quality.
 							</p>
 							<p>
-								Strong background in ERP systems and business processes,
-								supported by certifications in Business Administration, HR, and
-								PFA. Recognized for a problem-solving mindset, leadership, and
-								continuous learning.
+								Combines strong front-end craftsmanship with a practical
+								understanding of business processes, ERP systems, and financial
+								operations, backed by a Bachelor of Commerce (Honors) and
+								certifications in Business Administration, HR, and PFA.
 							</p>
 						</div>
 
