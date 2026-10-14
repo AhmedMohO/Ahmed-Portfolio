@@ -55,7 +55,7 @@ export default function Curve({ children }: CurveProps) {
 	}, []);
 
 	return (
-		<section className="relative wrapper pt-30">
+		<section className="relative wrapper pt-28 md:pt-32">
 			<div
 				className={`fixed inset-0 z-35 pointer-events-none transition-opacity duration-0 delay-100 ${
 					dimensions.width == null ? "opacity-100" : "opacity-0"
@@ -63,9 +63,9 @@ export default function Curve({ children }: CurveProps) {
 				style={{ backgroundColor: "black" }}
 			/>
 			<motion.p
-				className="fixed left-1/2 top-[50%] text-white flex items-center text-[46px] z-45 -translate-x-1/2 text-center pointer-events-none"
+				className="fixed left-1/2 top-1/2 text-white flex items-center gap-2 text-4xl sm:text-5xl z-45 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none font-bold"
 				{...anim(text as unknown as Variants)}>
-				<GoDotFill size={30} />
+				<GoDotFill className="text-main text-2xl" />
 				{routes[router.route]}
 			</motion.p>
 			{dimensions.width != null && dimensions.height != null && (

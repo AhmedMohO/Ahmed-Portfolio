@@ -38,7 +38,7 @@ const Button = ({
 	...props
 }: Props) => {
 	const classes = `flex w-full h-full ${classNameProps ? classNameProps : ""}`;
-	const classesTwo = `rounded-full items-center justify-center p-3 bg-[var(--main-color)] overflow-hidden ${
+	const classesTwo = `rounded-full items-center justify-center p-3 bg-main overflow-hidden ${
 		classNamePropsTwo ? classNamePropsTwo : ""
 	}`;
 

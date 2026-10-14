@@ -58,7 +58,7 @@ export default function CustomSelect({
 			<button
 				type="button"
 				onClick={() => setIsOpen(!isOpen)}
-				className="flex items-center gap-3 bg-[#18131e]/80 border border-white/10 backdrop-blur-md px-4 py-2 rounded-lg text-sm font-semibold text-gray-200 transition-colors hover:bg-[#25223c]">
+				className="flex items-center gap-3 bg-background/80 border border-white/10 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold text-gray-200 transition-colors hover:bg-background">
 				{placeholder}
 				<BsChevronDown
 					className={`text-gray-400 transition-transform duration-200 ${
@@ -68,14 +68,14 @@ export default function CustomSelect({
 			</button>
 
 			{isOpen && (
-				<div className="absolute left-0 top-full mt-2 w-52 bg-[#25223c]/95 backdrop-blur-xl border border-white/10 rounded-xl max-h-60 overflow-y-auto custom-scrollbar p-2 shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col gap-1">
+				<div className="absolute left-0 top-full mt-2 w-52 bg-background/95 backdrop-blur-xl border border-white/10 rounded-xl max-h-60 overflow-y-auto custom-scrollbar p-2 shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col gap-1">
 					{showSearch && (
 						<input
 							type="text"
 							value={searchQuery}
 							onChange={(e) => setSearchQuery(e.target.value)}
 							placeholder={`Search ${placeholder.toLowerCase()}...`}
-							className="w-full mb-1 px-3 py-2 rounded-lg border border-white/10 bg-[#18131e]/80 text-gray-100 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[var(--main-color)]/70"
+							className="w-full mb-1 px-3 py-2 rounded-lg border border-white/10 bg-background/80 text-gray-100 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-main/70"
 						/>
 					)}
 
@@ -91,9 +91,9 @@ export default function CustomSelect({
 								}}
 								className="flex items-center gap-3 px-2 py-2 cursor-pointer group rounded-lg hover:bg-white/5 transition-colors">
 								<div
-									className={`w-[18px] h-[18px] rounded-[4px] border flex items-center justify-center transition-all ${
+									className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-all ${
 										selectedOptions.includes(option)
-											? "bg-[var(--main-color)] border-[var(--main-color)]"
+											? "bg-main border-main"
 											: "border-gray-500 group-hover:border-gray-400"
 									}`}>
 									{selectedOptions.includes(option) && (

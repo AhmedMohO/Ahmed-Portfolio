@@ -1,14 +1,28 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt } from "react-icons/fa";
-import { SiNextdotjs, SiFramer, SiTypescript, SiTailwindcss, SiMongodb, SiNestjs } from "react-icons/si";
+import { FaReact, FaNodeJs, FaDocker, FaGitAlt } from "react-icons/fa";
+import {
+	SiNextdotjs,
+	SiFramer,
+	SiTypescript,
+	SiTailwindcss,
+	SiMongodb,
+	SiNestjs,
+	SiExpress,
+	SiGsap,
+} from "react-icons/si";
 import { memo, useEffect, useRef, useState, ReactNode } from "react";
 import Tap from "./Tap";
+
+interface TechIcon {
+	name: string;
+	icon: ReactNode;
+}
 
 interface InfoItem {
 	title: string;
 	stage?: string;
 	description?: string;
-	icons?: ReactNode[];
+	icons?: TechIcon[];
 }
 
 interface TabData {
@@ -87,7 +101,7 @@ export default memo(function SlideTaps() {
 				<motion.div
 					animate={position}
 					transition={{ type: "spring", stiffness: 400, damping: 30 }}
-					className="absolute z-0 bg-[#e27500] rounded-lg shadow-[0_0_12px_rgba(226,117,0,0.5)]"
+					className="absolute z-0 bg-main rounded-lg shadow-[0_0_12px_rgba(226,117,0,0.5)]"
 				/>
 			</ul>
 			<motion.div
@@ -123,7 +137,7 @@ export default memo(function SlideTaps() {
 							},
 						}}
 						className="w-full">
-						<div className="flex flex-col gap-3 w-full h-full max-h-[380px] overflow-y-auto pr-2 custom-scrollbar">
+						<div className="flex flex-col gap-3 w-full h-full max-h-96 overflow-y-auto pr-2 custom-scrollbar overflow-x-hidden">
 							{aboutData[activeTab].info.map((item, index) => (
 								<motion.div
 									key={index}
@@ -138,30 +152,38 @@ export default memo(function SlideTaps() {
 										duration: 0.3,
 										ease: "easeOut",
 									}}
-									className="flex flex-col md:flex-row justify-between items-center gap-y-2 gap-x-4 py-3.5 px-6 md:px-5 w-full bg-[#18131e]/70 border border-white/5 group backdrop-blur-sm rounded-[12px] text-gray-300 shadow-lg hover:shadow-[0_0_12px_rgba(226,117,0,0.5)] hover:bg-[#e27500] transition-all duration-300">
+									className="flex flex-col md:flex-row justify-between items-center gap-y-2 gap-x-4 py-3.5 px-5 w-full bg-background/70 border border-white/10 group backdrop-blur-sm rounded-xl text-gray-300 shadow-lg hover:shadow-[0_0_12px_rgba(226,117,0,0.5)] hover:bg-main hover:text-white transition-all duration-300">
 									<div className="flex flex-col text-center md:text-left gap-1 flex-1">
-										<div className="font-medium text-white/90 group-hover:text-white max-md:text-[15px]">
+										<div className="font-medium text-white/90 group-hover:text-white text-sm sm:text-base">
 											{item.title}
 										</div>
 										{item.description && (
-											<div className="text-xs text-gray-400 group-hover:text-white/90 leading-relaxed max-w-[650px]">
+											<div className="text-xs text-gray-400 group-hover:text-white/90 leading-relaxed max-w-2xl">
 												{item.description}
 											</div>
 										)}
 									</div>
-									<div className="flex items-center gap-4 shrink-0">
+									<div className="flex flex-wrap items-center justify-center md:justify-end gap-3 sm:gap-4 shrink-0">
 										{item.stage && (
 											<div className="text-sm text-gray-400 group-hover:text-white whitespace-nowrap font-medium">
 												{item.stage}
 											</div>
 										)}
 										{item.icons && (
-											<div className="flex gap-x-3.5">
-												{item.icons.map((icon, idx) => (
+											<div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+												{item.icons.map((tech, idx) => (
 													<div
 														key={idx}
-														className="text-[24px] text-white/80 group-hover:text-white hover:scale-110 transition-all">
-														{icon}
+														className="relative group/icon flex items-center justify-center">
+														<div className="text-xl sm:text-2xl text-white/80 group-hover:text-white group-hover/icon:!text-background group-hover/icon:scale-125 transition-all duration-200 cursor-pointer">
+															{tech.icon}
+														</div>
+
+														{/* Tooltip Popup */}
+														<div className="absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-background text-white text-xs font-semibold tracking-wide rounded-md border border-white/15 opacity-0 invisible -translate-y-1 group-hover/icon:opacity-100 group-hover/icon:visible group-hover/icon:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap z-50">
+															{tech.name}
+															<span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-background border-r border-b border-white/15 rotate-45" />
+														</div>
 													</div>
 												))}
 											</div>
@@ -182,28 +204,33 @@ const aboutData: TabData[] = [
 		title: "skills",
 		info: [
 			{
-				title: "Frontend Development",
+				title: "Full-Stack Development",
 				stage: "Core Stack",
+				description:
+					"Next.js, React, TypeScript, NestJS, Express.js, Tailwind CSS, GSAP & Node.js",
 				icons: [
-					<FaHtml5 key="html5" />,
-					<FaCss3 key="css3" />,
-					<FaJs key="js" />,
-					<SiTypescript key="ts" />,
-					<FaReact key="react" />,
-					<SiNextdotjs key="nextjs" />,
+					{ name: "React", icon: <FaReact key="react" /> },
+					{ name: "Next.js", icon: <SiNextdotjs key="nextjs" /> },
+					{ name: "TypeScript", icon: <SiTypescript key="ts" /> },
+					{ name: "Tailwind CSS", icon: <SiTailwindcss key="tailwind" /> },
+					{ name: "NestJS", icon: <SiNestjs key="nestjs" /> },
+					{ name: "Express.js", icon: <SiExpress key="express" /> },
 				],
 			},
 			{
-				title: "React, Next.js, Vue, Angular, Tailwind CSS, Motion, GSAP, Shadcn",
+				title:
+					"React, Next.js, Vue, Angular, Tailwind CSS, Motion, GSAP, Shadcn",
 				stage: "Frontend Ecosystem",
 			},
 			{
-				title: "Node.js, NestJS, REST APIs, GraphQL, MongoDB, MySQL",
+				title:
+					"NestJS, Express.js, Node.js, REST APIs, GraphQL, MongoDB, MySQL",
 				stage: "Backend & Data",
 				icons: [
-					<FaNodeJs key="node" />,
-					<SiNestjs key="nestjs" />,
-					<SiMongodb key="mongodb" />,
+					{ name: "NestJS", icon: <SiNestjs key="nestjs" /> },
+					{ name: "Express.js", icon: <SiExpress key="express" /> },
+					{ name: "Node.js", icon: <FaNodeJs key="node" /> },
+					{ name: "MongoDB", icon: <SiMongodb key="mongodb" /> },
 				],
 			},
 			{
@@ -215,13 +242,13 @@ const aboutData: TabData[] = [
 				stage: "Languages & CS",
 			},
 			{
-				title: "Git, Docker, Vercel, Figma-to-Code, Clerk, PayPal SDK",
-				stage: "DevOps & Integrations",
+				title: "Git, Docker, Vercel, Figma, Sketch, Clerk, PayPal SDK",
+				stage: "DevOps & Tools",
 				icons: [
-					<FaGitAlt key="git" />,
-					<FaDocker key="docker" />,
-					<SiTailwindcss key="tailwind" />,
-					<SiFramer key="framer" />,
+					{ name: "Git", icon: <FaGitAlt key="git" /> },
+					{ name: "Docker", icon: <FaDocker key="docker" /> },
+					{ name: "Tailwind CSS", icon: <SiTailwindcss key="tailwind" /> },
+					{ name: "Framer Motion", icon: <SiFramer key="framer" /> },
 				],
 			},
 			{
@@ -264,7 +291,8 @@ const aboutData: TabData[] = [
 			{
 				title: "Egyptian Information Technology Foundation (INFC)",
 				stage: "Apr 2022 – Sep 2024",
-				description: "Extensive web development foundational experience and practical project execution.",
+				description:
+					"Extensive web development foundational experience and practical project execution.",
 			},
 		],
 	},
@@ -278,7 +306,8 @@ const aboutData: TabData[] = [
 					"Information Technology Institute (ITI): Intensive 9-month program covering 25+ technologies including React, Next.js, Node.js, NestJS, MongoDB, MySQL, Docker, OOP, DSA, and Software Architecture.",
 			},
 			{
-				title: "Mansoura University – Faculty of Commerce (Bachelor of Commerce)",
+				title:
+					"Mansoura University – Faculty of Commerce (Bachelor of Commerce)",
 				stage: "2021 – 2025",
 				description:
 					"Graduated July 2025 with Honors. Strong analytical background in accounting, finance, business management, economics, and strategic decision-making.",
@@ -293,7 +322,8 @@ const aboutData: TabData[] = [
 				stage: "Dec 2025",
 			},
 			{
-				title: "Front-End React Training – Information Technology Institute (ITI)",
+				title:
+					"Front-End React Training – Information Technology Institute (ITI)",
 				stage: "Jul 2025 – Sep 2025",
 			},
 			{
@@ -309,11 +339,13 @@ const aboutData: TabData[] = [
 				stage: "Sep 2023 – Dec 2023",
 			},
 			{
-				title: "Internal Core Competency Certification (IC3) – Mansoura University",
+				title:
+					"Internal Core Competency Certification (IC3) – Mansoura University",
 				stage: "Aug 2023 – Oct 2023",
 			},
 			{
-				title: "Human Resources and Business Administration – Mansoura University",
+				title:
+					"Human Resources and Business Administration – Mansoura University",
 				stage: "Jun 2023 – Aug 2023",
 			},
 		],

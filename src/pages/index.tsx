@@ -43,7 +43,7 @@ export default function Home() {
 				<meta itemProp="name" content="Home" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)] max-md:pb-25 flex flex-col md:flex-row gap-14 justify-center items-center relative">
+				<main className="min-h-[calc(100vh-120px)] pb-28 md:pb-16 flex flex-col md:flex-row gap-12 md:gap-14 justify-center items-center relative">
 					<ParticalesContainer />
 
 					{/* Left Side: Gallery and Quick Stats */}
@@ -53,9 +53,6 @@ export default function Home() {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.76, duration: 0.6 }}
 							className="bg-white/5 backdrop-blur-md border border-white/5 rounded-3xl w-full p-5 hidden md:block">
-							<h1 className="text-center text-white mb-4 text-xl font-medium tracking-wide">
-								Professional & Friendly
-							</h1>
 							<div className="grid grid-cols-2 gap-4">
 								{projects.map((project) => (
 									<Image
@@ -81,32 +78,32 @@ export default function Home() {
 							</h3>
 							<div className="flex gap-4 max-sm:flex-col">
 								{/* Quick Stat 1 */}
-								<div className="bg-[#1f2038] rounded-[1rem] p-5 flex-1 flex flex-col gap-3">
+								<div className="bg-background/80 border border-white/10 rounded-2xl p-5 flex-1 flex flex-col gap-3 shadow-lg">
 									<div className="flex items-center gap-4">
-										<div className="bg-[var(--main-color)] bg-gradient-to-b from-[#f28e2c] to-[var(--main-color)] p-3 rounded-2xl w-16 h-16 flex items-center justify-center text-white shadow-md">
+										<div className="bg-gradient-to-b from-secondary to-main p-3.5 rounded-2xl w-16 h-16 flex items-center justify-center text-white shadow-md">
 											<FaUser size={30} />
 										</div>
-										<div className="text-[2.7rem] leading-none font-bold text-white tracking-wide">
-											3+
+										<div className="text-5xl leading-none font-bold text-white tracking-wide">
+											2+
 										</div>
 									</div>
-									<div className="text-[1.1rem] text-gray-300 font-medium">
-										<span className="text-[#de6810]">Years</span> Experience
+									<div className="text-lg text-gray-300 font-medium">
+										<span className="text-main">Years</span> Experience
 									</div>
 								</div>
 
 								{/* Quick Stat 2 */}
-								<div className="bg-[#1f2038] rounded-[1rem] p-5 flex-1 flex flex-col gap-3">
+								<div className="bg-background/80 border border-white/10 rounded-2xl p-5 flex-1 flex flex-col gap-3 shadow-lg">
 									<div className="flex items-center gap-4">
-										<div className="bg-[var(--main-color)] bg-gradient-to-b from-[#f28e2c] to-[var(--main-color)] p-3 rounded-2xl w-16 h-16 flex items-center justify-center text-white shadow-md">
+										<div className="bg-gradient-to-b from-secondary to-main p-3.5 rounded-2xl w-16 h-16 flex items-center justify-center text-white shadow-md">
 											<FaFolder size={30} />
 										</div>
-										<div className="text-[2.7rem] leading-none font-bold text-white tracking-wide">
+										<div className="text-5xl leading-none font-bold text-white tracking-wide">
 											10+
 										</div>
 									</div>
-									<div className="text-[1.1rem] text-gray-300 font-medium">
-										<span className="text-[#de6810]">Projects</span> Completed
+									<div className="text-lg text-gray-300 font-medium">
+										<span className="text-main">Projects</span> Completed
 									</div>
 								</div>
 							</div>
@@ -114,7 +111,7 @@ export default function Home() {
 							{/* Circular My Projects Button */}
 							<Link
 								href="/work"
-								className="hidden xl:flex flex-col justify-center items-center text-[15px] font-bold absolute -top-16 -right-10 w-[115px] h-[115px] rounded-full border-[1.5px] border-[#d97c55]/80 bg-[#1c1314]/60 backdrop-blur-sm hover:bg-[#d97c55]/20 hover:scale-105 transition-all duration-300 group z-20 text-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+								className="hidden xl:flex flex-col justify-center items-center text-sm font-bold absolute -top-16 -right-10 w-28 h-28 rounded-full border-2 border-secondary/80 bg-background/60 backdrop-blur-sm hover:bg-secondary/20 hover:scale-105 transition-all duration-300 group z-20 text-gray-100 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
 								<span className="leading-tight">My</span>
 								<span className="leading-tight">Projects</span>
 								<BsArrowRight className="text-2xl mt-1 group-hover:translate-x-1 text-white transition-transform duration-300" />
@@ -128,8 +125,8 @@ export default function Home() {
 							initial={{ x: 20, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.76, duration: 0.6 }}
-							className="text-[2.2rem] sm:text-5xl lg:text-[4rem] font-bold leading-tight lg:leading-[1.1] tracking-tight">
-							<span className="text-[var(--main-color)] block drop-shadow-[0_0_15px_var(--main-color)]">
+							className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight lg:leading-tight tracking-tight">
+							<span className="text-main block drop-shadow-[0_0_15px_var(--main-color)]">
 								Transforming Ideas
 							</span>
 							Into Digital Reality
@@ -139,11 +136,11 @@ export default function Home() {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.8, duration: 0.6 }}
 							className="text-gray-300 text-sm md:text-base lg:text-lg max-w-xl mx-auto md:mx-0 leading-relaxed">
-							Hey, I am a front-end developer with a background in business and
-							finance, passionate about building clean, responsive web apps
-							using React and TypeScript. I enjoy turning ideas into functional,
-							user-focused experiences, and I&apos;m always learning to grow my
-							skills and make an impact through code.
+							Hey, I am a full-stack developer with a background in business and
+							finance, passionate about building clean, scalable web apps using
+							Next.js, React, TypeScript, and NestJS. I enjoy turning ideas into
+							functional, user-focused experiences, and I&apos;m always learning
+							to grow my skills and make an impact through code.
 						</motion.p>
 						<motion.div
 							initial={{ y: 20, opacity: 0 }}
@@ -153,8 +150,7 @@ export default function Home() {
 							<Button
 								li
 								link="/about"
-								classNamePropsTwo="!w-fit !h-fit !rounded-xl !overflow-visible p-[2px] bg-gradient-to-r from-[var(--main-color)] to-[var(--secondary-color)] shadow-[0_0_15px_rgba(226,117,0,0.4)] group-hover:shadow-[0_0_25px_rgba(226,117,0,0.6)] transition-all duration-300"
-								classNameProps="bg-gradient-to-r from-[#de6810] to-[#e47600] !px-6 !py-3 !rounded-[10px] sm:text-lg font-bold gap-3 text-white justify-center items-center shadow-inner">
+								classNameProps="rounded-xl sm:text-lg font-bold gap-3 text-white justify-center items-center ">
 								About Me{" "}
 								<BsArrowRight className="text-xl group-hover:translate-x-1 transition-transform duration-300" />
 							</Button>

@@ -35,7 +35,7 @@ const ParticalesContainer = () => {
 						value: "#c64b22",
 					},
 					links: {
-						color: "#c29223",
+						color: "#e27500",
 						distance: 150,
 						enable: true,
 						opacity: 0.5,

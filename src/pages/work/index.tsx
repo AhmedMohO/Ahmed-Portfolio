@@ -144,36 +144,36 @@ function Work({ projects }: WorkProps) {
 				exit={{ opacity: 0, scale: 0.9 }}
 				transition={{ duration: 0.4 }}
 				className={cn(
-					"w-full h-full bg-[#18131e]/80 border border-transparent rounded-xl p-3 flex flex-col gap-4 shadow-lg hover:shadow-[0_0_20px_rgba(226,117,0,0.2)] hover:border-[var(--main-color)] transition-all duration-500 overflow-hidden group/card",
+					"w-full h-full bg-background/80 border border-transparent rounded-2xl p-3.5 flex flex-col gap-4 shadow-lg hover:shadow-[0_0_20px_rgba(226,117,0,0.2)] hover:border-main transition-all duration-500 overflow-hidden group/card",
 					featuredClass,
 				)}>
 				<a
 					href={project.path}
 					target={project.path !== "#" ? "_blank" : "_self"}
 					onClick={(e) => handleProjectClick(e, project.path)}
-					className="relative w-full flex-1 min-h-[200px] rounded-md overflow-hidden group cursor-pointer border border-white/5 z-20">
+					className="relative w-full flex-1 min-h-52 rounded-xl overflow-hidden group cursor-pointer border border-white/5 z-20">
 					<Image
 						src={`${imageUrl.url()}`}
 						fill
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt={project.title}
-						className="object-cover rounded-md group-hover:scale-105 transition-transform duration-700 z-20"
+						className="object-cover rounded-xl group-hover:scale-105 transition-transform duration-700 z-20"
 					/>
 
 					{/* Hover Overlay mimicking the image design */}
-					<div className="absolute inset-0 z-30 bg-[#0a0510]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-5">
+					<div className="absolute inset-0 z-30 bg-background/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-5">
 						{project.tags && project.tags.length > 0 && (
 							<div className="flex gap-2 flex-wrap justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
 								{project.tags.slice(0, 3).map((tag) => (
 									<span
 										key={tag}
-										className="px-4 py-1.5 rounded-full border border-white/20 text-white text-[13px] tracking-wide bg-white/5 backdrop-blur-md">
+										className="px-4 py-1.5 rounded-full border border-white/20 text-white text-xs tracking-wide bg-white/5 backdrop-blur-md">
 										{tag}
 									</span>
 								))}
 							</div>
 						)}
-						<div className="bg-gradient-to-r from-[#de6810] to-[#f28e2c] text-white px-7 py-2.5 rounded-full font-bold shadow-[0_0_20px_rgba(226,117,0,0.7)] flex items-center gap-2 group-hover:scale-105 transition-all duration-300 md:text-lg translate-y-4 group-hover:translate-y-0 delay-150">
+						<div className="bg-gradient-to-r from-secondary to-main text-white px-6 py-2.5 rounded-full font-bold shadow-[0_0_20px_rgba(226,117,0,0.7)] flex items-center gap-2 group-hover:scale-105 transition-all duration-300 md:text-lg translate-y-4 group-hover:translate-y-0 delay-150">
 							{project.path === "#" ? "Private Project" : "Live Demo"}
 							{project.path === "#" ? null : (
 								<BsArrowRight className="text-xl" />
@@ -207,11 +207,11 @@ function Work({ projects }: WorkProps) {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.9, duration: 0.8 }}
-						className="w-full flex flex-col gap-14 pb-32">
+						className="w-full flex flex-col gap-12 pb-28 md:pb-16">
 						{/* Filter Bar */}
-						<div className="relative z-50 w-full bg-[#1c1a29]/60 border border-white/10 rounded-2xl p-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl backdrop-blur-md">
+						<div className="relative z-50 w-full bg-background/60 border border-white/10 rounded-2xl p-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl backdrop-blur-md">
 							<div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-								<div className="flex items-center gap-2 text-[var(--main-color)] font-bold text-[15px] tracking-wider">
+								<div className="flex items-center gap-2 text-main font-bold text-sm tracking-wider">
 									<BsFilter className="text-xl" />
 									REFINE RESULTS:
 								</div>
@@ -249,7 +249,7 @@ function Work({ projects }: WorkProps) {
 										<h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-3">
 											Featured Projects
 										</h2>
-										<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-3 md:gap-6 auto-rows-fr sm:min-h-[350px] md:min-h-[500px]">
+										<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr sm:min-h-80 md:min-h-96">
 											{featuredProjects
 												.slice(0, 4)
 												.map((project, index, arr) => {
@@ -318,7 +318,7 @@ function Work({ projects }: WorkProps) {
 														className={cn(
 															"h-2.5 rounded-full transition-all duration-300",
 															currentPage === i + 1
-																? "w-8 bg-[var(--main-color)] shadow-[0_0_10px_rgba(226,117,0,0.8)]"
+																? "w-8 bg-main shadow-[0_0_10px_rgba(226,117,0,0.8)]"
 																: "w-2.5 bg-white/20 hover:bg-white/40 shadow-sm",
 														)}
 														aria-label={`Go to page ${i + 1}`}

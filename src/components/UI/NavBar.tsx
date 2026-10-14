@@ -50,7 +50,7 @@ function NavBar() {
 			initial={{ x: 20, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ delay: 0.76, duration: 0.6 }}
-			className="fixed right-0 w-23 h-screen md:bg-[#161233] pointer-events-none z-30">
+			className="fixed right-0 w-24 h-screen md:bg-background/80 pointer-events-none z-30">
 			<motion.div
 				variants={containerVariants}
 				initial="hidden"
@@ -60,12 +60,12 @@ function NavBar() {
 					<Link href="/" className="flex flex-col items-center gap-1.5 group">
 						<Magnetic>
 							<div
-								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/" ? "bg-gradient-to-t from-[#de6810] to-[#f28e2c] shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
+								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/" ? "bg-gradient-to-t from-secondary to-main shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
 								<AiOutlineHome className="text-xl lg:text-2xl text-white" />
 							</div>
 						</Magnetic>
 						<span
-							className={`text-[11px] lg:text-xs font-semibold transition-colors duration-300 ${pathname === "/" ? "text-[var(--main-color)]" : "text-white group-hover:text-gray-300"}`}>
+							className={`text-xs font-semibold transition-colors duration-300 ${pathname === "/" ? "text-main" : "text-white group-hover:text-gray-300"}`}>
 							Home
 						</span>
 					</Link>
@@ -77,12 +77,12 @@ function NavBar() {
 						className="flex flex-col items-center gap-1.5 group">
 						<Magnetic>
 							<div
-								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/about" ? "bg-gradient-to-t from-[#de6810] to-[#f28e2c] shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
-								<TbInfoOctagon className="text-xl lg:text-[26px] text-white" />
+								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/about" ? "bg-gradient-to-t from-secondary to-main shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
+								<TbInfoOctagon className="text-xl lg:text-2xl text-white" />
 							</div>
 						</Magnetic>
 						<span
-							className={`text-[11px] lg:text-xs font-semibold transition-colors duration-300 ${pathname === "/about" ? "text-[var(--main-color)]" : "text-white group-hover:text-gray-300"}`}>
+							className={`text-xs font-semibold transition-colors duration-300 ${pathname === "/about" ? "text-main" : "text-white group-hover:text-gray-300"}`}>
 							About
 						</span>
 					</Link>
@@ -94,12 +94,12 @@ function NavBar() {
 						className="flex flex-col items-center gap-1.5 group">
 						<Magnetic>
 							<div
-								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/work" ? "bg-gradient-to-t from-[#de6810] to-[#f28e2c] shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
-								<SiWorkplace className="text-lg lg:text-[22px] text-white" />
+								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/work" ? "bg-gradient-to-t from-secondary to-main shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
+								<SiWorkplace className="text-xl lg:text-2xl text-white" />
 							</div>
 						</Magnetic>
 						<span
-							className={`text-[11px] lg:text-xs font-semibold transition-colors duration-300 ${pathname === "/work" ? "text-[var(--main-color)]" : "text-white group-hover:text-gray-300"}`}>
+							className={`text-xs font-semibold transition-colors duration-300 ${pathname === "/work" ? "text-main" : "text-white group-hover:text-gray-300"}`}>
 							Work
 						</span>
 					</Link>
@@ -111,12 +111,12 @@ function NavBar() {
 						className="flex flex-col items-center gap-1.5 group">
 						<Magnetic>
 							<div
-								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/contact" ? "bg-gradient-to-t from-[#de6810] to-[#f28e2c] shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
-								<TiMessages className="text-[22px] lg:text-[28px] text-white" />
+								className={`w-11 h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 ${pathname === "/contact" ? "bg-gradient-to-t from-secondary to-main shadow-[0_0_15px_rgba(226,117,0,0.6)]" : "border border-white/20 group-hover:border-white/50"}`}>
+								<TiMessages className="text-xl lg:text-2xl text-white" />
 							</div>
 						</Magnetic>
 						<span
-							className={`text-[11px] lg:text-xs font-semibold transition-colors duration-300 ${pathname === "/contact" ? "text-[var(--main-color)]" : "text-white group-hover:text-gray-300"}`}>
+							className={`text-xs font-semibold transition-colors duration-300 ${pathname === "/contact" ? "text-main" : "text-white group-hover:text-gray-300"}`}>
 							Contact
 						</span>
 					</Link>
@@ -126,14 +126,14 @@ function NavBar() {
 				initial={{ y: 30, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ delay: 0.76, duration: 0.6 }}
-				className="fixed pb-2 pt-3 px-6 mx-4 flex justify-between items-end bottom-5 left-0 right-0 md:hidden bg-[#1c1a29]/95 border border-white/10 backdrop-blur-xl text-gray-400 rounded-[24px] z-50 shadow-2xl pointer-events-auto">
+				className="fixed pb-2 pt-3 px-6 mx-4 flex justify-between items-end bottom-5 left-0 right-0 md:hidden bg-background/95 border border-white/10 backdrop-blur-xl text-gray-400 rounded-3xl z-50 shadow-2xl pointer-events-auto">
 				<Link href="/" className="relative flex flex-col items-center w-12">
 					<div
-						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>
-						<AiOutlineHome className={pathname === "/" ? "text-[26px]" : ""} />
+						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/" ? "w-12 h-12 rounded-full bg-gradient-to-t from-secondary to-main text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-2xl relative"}`}>
+						<AiOutlineHome className={pathname === "/" ? "text-2xl" : ""} />
 					</div>
 					<span
-						className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						className={`text-xs font-medium transition-all duration-300 ${pathname === "/" ? "mt-4 text-main" : "mt-1"}`}>
 						Home
 					</span>
 				</Link>
@@ -142,26 +142,26 @@ function NavBar() {
 					href="/about"
 					className="relative flex flex-col items-center w-12">
 					<div
-						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/about" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>
+						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/about" ? "w-12 h-12 rounded-full bg-gradient-to-t from-secondary to-main text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-2xl relative"}`}>
 						<TbInfoOctagon
-							className={pathname === "/about" ? "text-[26px]" : ""}
+							className={pathname === "/about" ? "text-2xl" : ""}
 						/>
 					</div>
 					<span
-						className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/about" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						className={`text-xs font-medium transition-all duration-300 ${pathname === "/about" ? "mt-4 text-main" : "mt-1"}`}>
 						About
 					</span>
 				</Link>
 
 				<Link href="/work" className="relative flex flex-col items-center w-12">
 					<div
-						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/work" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[22px] relative"}`}>
+						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/work" ? "w-12 h-12 rounded-full bg-gradient-to-t from-secondary to-main text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-2xl relative"}`}>
 						<SiWorkplace
-							className={pathname === "/work" ? "text-[22px]" : ""}
+							className={pathname === "/work" ? "text-2xl" : ""}
 						/>
 					</div>
 					<span
-						className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/work" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						className={`text-xs font-medium transition-all duration-300 ${pathname === "/work" ? "mt-4 text-main" : "mt-1"}`}>
 						Work
 					</span>
 				</Link>
@@ -170,13 +170,13 @@ function NavBar() {
 					href="/contact"
 					className="relative flex flex-col items-center w-12">
 					<div
-						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/contact" ? "w-12 h-12 rounded-full bg-gradient-to-t from-[#de6810] to-[#f28e2c] text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-[25px] relative"}`}>
+						className={`transition-all duration-300 flex items-center justify-center ${pathname === "/contact" ? "w-12 h-12 rounded-full bg-gradient-to-t from-secondary to-main text-white shadow-[0_0_15px_rgba(226,117,0,0.6)] absolute -top-9 z-10" : "text-2xl relative"}`}>
 						<TiMessages
-							className={pathname === "/contact" ? "text-[28px]" : ""}
+							className={pathname === "/contact" ? "text-2xl" : ""}
 						/>
 					</div>
 					<span
-						className={`text-[11px] font-medium transition-all duration-300 ${pathname === "/contact" ? "mt-4 text-[var(--main-color)]" : "mt-1"}`}>
+						className={`text-xs font-medium transition-all duration-300 ${pathname === "/contact" ? "mt-4 text-main" : "mt-1"}`}>
 						Contact
 					</span>
 				</Link>

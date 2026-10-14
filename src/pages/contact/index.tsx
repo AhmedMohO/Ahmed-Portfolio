@@ -23,7 +23,7 @@ const Contact: NextPage = () => {
 	>("idle");
 
 	const handleInputChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
 		const { name, value } = e.target;
 		setFormData((prev) => ({ ...prev, [name]: value }));
@@ -66,16 +66,16 @@ const Contact: NextPage = () => {
 				<meta itemProp="name" content="Contact Me" />
 			</Head>
 			<Curve>
-				<main className="min-h-[calc(100vh-120px)]">
+				<main className="min-h-[calc(100vh-120px)] pb-28 md:pb-16">
 					<motion.div
 						initial={{ y: -20, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ delay: 0.78, duration: 0.6 }}
-						className="text-center mb-4 md:mb-8 lg:mb-12">
-						<h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent sm:mb-4">
+						className="text-center mb-6 md:mb-10">
+						<h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-secondary to-main bg-clip-text text-transparent sm:mb-4">
 							Let&apos;s Connect
 						</h1>
-						<p className="text-gray-400 text-lg max-w-2xl mx-auto">
+						<p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
 							Have a project in mind or just want to say hello? I&apos;d love to
 							hear from you.
 						</p>
@@ -86,7 +86,9 @@ const Contact: NextPage = () => {
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ delay: 0.76, duration: 0.6 }}
 						className="max-w-2xl mx-auto">
-						<form onSubmit={handleSubmit} className="space-y-2 md:space-y-6">
+						<form
+							onSubmit={handleSubmit}
+							className="space-y-4 md:space-y-6 bg-background/80 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl">
 							<div className="flex items-center gap-4">
 								<div className="w-1/2">
 									<label
@@ -100,8 +102,8 @@ const Contact: NextPage = () => {
 										name="name"
 										value={formData.name}
 										onChange={handleInputChange}
-										className={`w-full px-4 py-3 bg-gray-900 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-											errors.name ? "border-red-500" : "border-gray-700"
+										className={`w-full px-4 py-3 bg-background/80 border rounded-xl focus:ring-2 focus:ring-main/70 focus:border-main/50 transition-all duration-200 text-white placeholder:text-gray-500 ${
+											errors.name ? "border-red-500" : "border-white/10"
 										}`}
 										placeholder="Your full name"
 									/>
@@ -121,8 +123,8 @@ const Contact: NextPage = () => {
 										name="email"
 										value={formData.email}
 										onChange={handleInputChange}
-										className={`w-full px-4 py-3 bg-gray-900 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-											errors.email ? "border-red-500" : "border-gray-700"
+										className={`w-full px-4 py-3 bg-background/80 border rounded-xl focus:ring-2 focus:ring-main/70 focus:border-main/50 transition-all duration-200 text-white placeholder:text-gray-500 ${
+											errors.email ? "border-red-500" : "border-white/10"
 										}`}
 										placeholder="your.email@example.com"
 									/>
@@ -144,8 +146,8 @@ const Contact: NextPage = () => {
 									name="subject"
 									value={formData.subject}
 									onChange={handleInputChange}
-									className={`w-full px-4 py-3 bg-gray-900 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-										errors.subject ? "border-red-500" : "border-gray-700"
+									className={`w-full px-4 py-3 bg-background/80 border rounded-xl focus:ring-2 focus:ring-main/70 focus:border-main/50 transition-all duration-200 text-white placeholder:text-gray-500 ${
+										errors.subject ? "border-red-500" : "border-white/10"
 									}`}
 									placeholder="What's this about?"
 								/>
@@ -166,8 +168,8 @@ const Contact: NextPage = () => {
 									rows={6}
 									value={formData.message}
 									onChange={handleInputChange}
-									className={`w-full px-4 py-3 bg-gray-900 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none ${
-										errors.message ? "border-red-500" : "border-gray-700"
+									className={`w-full px-4 py-3 bg-background/80 border rounded-xl focus:ring-2 focus:ring-main/70 focus:border-main/50 transition-all duration-200 resize-none text-white placeholder:text-gray-500 ${
+										errors.message ? "border-red-500" : "border-white/10"
 									}`}
 									placeholder="Tell me more about your project or just say hello..."
 								/>
@@ -177,7 +179,8 @@ const Contact: NextPage = () => {
 							</div>
 
 							<Button
-								classNameProps="justify-center cursor-pointer"
+								classNamePropsTwo="w-fit h-fit rounded-xl overflow-visible p-0.5 bg-gradient-to-r from-secondary to-main shadow-md"
+								classNameProps="rounded-xl sm:text-base font-bold gap-3 text-white justify-center items-center cursor-pointer"
 								type="submit"
 								disabled={isSubmitting}>
 								{isSubmitting ? (
