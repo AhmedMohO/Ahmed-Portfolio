@@ -151,22 +151,57 @@ function Work({ projects }: WorkProps) {
 					href={project.path}
 					target={project.path !== "#" ? "_blank" : "_self"}
 					onClick={(e) => handleProjectClick(e, project.path)}
-					className="relative w-full flex-1 min-h-52 rounded-xl overflow-hidden group cursor-pointer border border-white/5 z-20">
-					<Image
-						src={`${imageUrl.url()}`}
-						fill
-						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-						alt={project.title}
-						className="object-cover rounded-xl group-hover:scale-105 transition-transform duration-700 z-20"
-					/>
+					className="relative w-full flex-1 min-h-56 rounded-xl overflow-hidden group cursor-pointer p-2 sm:p-3 flex flex-col justify-center items-center z-20 border border-white/10 bg-white/[0.02]">
+					{/* Dynamic Ambient Glow matching project palette */}
+					<div className="absolute inset-0 overflow-hidden pointer-events-none rounded-xl">
+						<Image
+							src={`${imageUrl.url()}`}
+							fill
+							sizes="(max-width: 768px) 100vw, 50vw"
+							alt=""
+							aria-hidden="true"
+							className="object-cover blur-3xl scale-125 opacity-25 contrast-125 saturate-150 transition-opacity duration-700 group-hover:opacity-45"
+						/>
+						<div className="absolute inset-0 bg-background/50 backdrop-blur-[2px]" />
+					</div>
+
+					{/* Browser Window Mockup Frame */}
+					<div className="relative z-10 w-full h-full flex flex-col rounded-lg overflow-hidden border border-white/10 bg-[#0d0e1b]/90 shadow-2xl backdrop-blur-sm group-hover:border-white/20 transition-all duration-500">
+						{/* Window Top Bar */}
+						<div className="h-6 sm:h-7 w-full bg-white/[0.04] border-b border-white/10 flex items-center justify-between px-3 shrink-0">
+							<div className="flex items-center gap-1.5">
+								<span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#ff5f56]/90 shadow-sm" />
+								<span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#ffbd2e]/90 shadow-sm" />
+								<span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#27c93f]/90 shadow-sm" />
+							</div>
+							<div className="flex items-center gap-1 text-[10px] text-gray-400 font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 truncate max-w-[140px] sm:max-w-[200px]">
+								<span className="text-white/30 text-[9px]">https://</span>
+								<span className="truncate">
+									{project.title.toLowerCase().replace(/[^a-z0-9]/g, "")}.com
+								</span>
+							</div>
+							<div className="w-6" />
+						</div>
+
+						{/* Contained Image Stage */}
+						<div className="relative w-full flex-1 min-h-0 flex items-center justify-center p-1 sm:p-2 bg-black/25 overflow-hidden">
+							<Image
+								src={`${imageUrl.url()}`}
+								fill
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+								alt={project.title}
+								className="object-contain rounded transition-transform duration-700 group-hover:scale-[1.03]"
+							/>
+						</div>
+					</div>
 
 					{/* Hover Overlay mimicking the image design */}
 					<div className="absolute inset-0 z-30 bg-background/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-5">
 						{project.tags && project.tags.length > 0 && (
 							<div className="flex gap-2 flex-wrap justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-								{project.tags.slice(0, 3).map((tag) => (
+								{project.tags.slice(0, 3).map((tag, index) => (
 									<span
-										key={tag}
+										key={index}
 										className="px-4 py-1.5 rounded-full border border-white/20 text-white text-xs tracking-wide bg-white/5 backdrop-blur-md">
 										{tag}
 									</span>
@@ -182,9 +217,16 @@ function Work({ projects }: WorkProps) {
 					</div>
 				</a>
 				<div className="flex flex-col gap-1.5 px-2 pb-1">
-					<h3 className="text-xl font-bold text-white tracking-wide">
-						{project.title}
-					</h3>
+					<div className="flex items-center justify-between gap-2">
+						<h3 className="text-xl font-bold text-white tracking-wide truncate">
+							{project.title}
+						</h3>
+						{project.isFeatured && (
+							<span className="text-[10px] font-semibold text-main uppercase tracking-wider bg-main/10 border border-main/20 px-2 py-0.5 rounded-full shrink-0">
+								Featured
+							</span>
+						)}
+					</div>
 					<p className="text-sm text-gray-400 line-clamp-2 leading-relaxed">
 						{project.tags?.join(", ") || "A web development project."}
 					</p>
@@ -249,7 +291,7 @@ function Work({ projects }: WorkProps) {
 										<h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-3">
 											Featured Projects
 										</h2>
-										<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr sm:min-h-80 md:min-h-96">
+										<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
 											{featuredProjects
 												.slice(0, 4)
 												.map((project, index, arr) => {
@@ -297,8 +339,7 @@ function Work({ projects }: WorkProps) {
 												animate={{ opacity: 1, y: 0 }}
 												exit={{ opacity: 0, y: -10 }}
 												transition={{ duration: 0.3 }}
-												className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-											>
+												className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 												{paginatedNormalProjects.map((project, index) => (
 													<ProjectCard
 														key={`${project.title}-${index}-${currentPage}`}
